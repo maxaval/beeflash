@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Dashboard Bee Flash</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Panel de Administración</h1>
+
+    <canvas id="pedidosChart"></canvas>
+
+    <h2>Tiempo promedio de entrega</h2>
+    <p id="tiempo-promedio"></p>
+
+    <h2>Pedidos por comercio</h2>
+    <table>
+        <tr>
+            <th>Comercio</th>
+            <th>Total de pedidos</th>
+            <th>Entregados</th>
+        </tr>
+        <tbody id="tabla-comercios"></tbody>
+    </table>
+
+    <script>
+        fetch("/api/pedidos/")
+        .then(response => response.json())
+        .then(data => {
+            const ctx = document.getElementById("pedidosChart").getContext("2d");
+            new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: ["Pendientes", "En camino", "Entregados"],
+                    datasets: [{
+                        label: "Pedidos",
+                        data: [
+                            data.filter(p => p.estado === "pendiente").length,
+                            data.filter(p => p.estado === "en_camino").length,
+                            data.filter(p => p.estado === "entregado").length
+                        ],
+                        backgroundColor: ["red", "yellow", "green"]
+                    }]
+                }
+            });
+        });
+
+        fetch("/api/estadisticas/")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("tiempo-promedio").innerText = data.tiempo_promedio_minutos + " min";
+        });
+
+        fetch("/api/reportes-comercios/")
+        .then(response => response.json())
+        .then(data => {
+            let tabla = document.getElementById("tabla-comercios");
+            data.forEach(comercio => {
+                let fila = `<tr><td>${comercio.nombre}</td><td>${comercio.total_pedidos}</td><td>${comercio.pedidos_entregados}</td></tr>`;
+                tabla.innerHTML += fila;
+            });
+        });
+    </script>
+</body>
+</html>
