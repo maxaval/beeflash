@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v3.1.0
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -13,18 +13,15 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// Soft UI Dashboard React base styles
+// Argon Dashboard 2 MUI base styles
 import colors from "assets/theme/base/colors";
 import borders from "assets/theme/base/borders";
-import boxShadows from "assets/theme/base/boxShadows";
 
-// Soft UI Dashboard React helper functions
-import linearGradient from "assets/theme/functions/linearGradient";
+// Argon Dashboard 2 MUI helper functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
-const { light, white, sliderColors, black, gradients } = colors;
-const { borderRadius, borderWidth } = borders;
-const { sliderBoxShadow } = boxShadows;
+const { light, black, info } = colors;
+const { borderRadius } = borders;
 
 const slider = {
   styleOverrides: {
@@ -41,13 +38,13 @@ const slider = {
     },
 
     rail: {
-      height: pxToRem(3),
+      height: pxToRem(4),
       backgroundColor: light.main,
       borderRadius: borderRadius.sm,
     },
 
     track: {
-      backgroundImage: linearGradient(gradients.info.main, gradients.info.state),
+      backgroundColor: info.main,
       height: pxToRem(6),
       position: "relative",
       top: pxToRem(2),
@@ -59,10 +56,10 @@ const slider = {
     thumb: {
       width: pxToRem(15),
       height: pxToRem(15),
-      backgroundColor: white.main,
+      backgroundColor: info.main,
       zIndex: 10,
-      boxShadow: sliderBoxShadow.thumb,
-      border: `${borderWidth[1]} solid ${sliderColors.thumb.borderColor}`,
+      boxShadow: "none",
+      border: 0,
 
       "&:hover": {
         boxShadow: "none",

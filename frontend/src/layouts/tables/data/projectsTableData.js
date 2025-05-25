@@ -2,10 +2,10 @@
 // @mui material components
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftProgress from "components/SoftProgress";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
+import ArgonProgress from "components/ArgonProgress";
 
 // Images
 import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
@@ -17,14 +17,14 @@ import logoXD from "assets/images/small-logos/logo-xd.svg";
 
 function Completion({ value, color }) {
   return (
-    <SoftBox display="flex" alignItems="center">
-      <SoftTypography variant="caption" color="text" fontWeight="medium">
+    <ArgonBox display="flex" alignItems="center">
+      <ArgonTypography variant="caption" color="text" fontWeight="medium">
         {value}%&nbsp;
-      </SoftTypography>
-      <SoftBox width="8rem">
-        <SoftProgress value={value} color={color} variant="gradient" label={false} />
-      </SoftBox>
-    </SoftBox>
+      </ArgonTypography>
+      <ArgonBox width="8rem">
+        <ArgonProgress value={value} color={color} variant="gradient" label={false} />
+      </ArgonBox>
+    </ArgonBox>
   );
 }
 
@@ -47,14 +47,14 @@ const projectsTableData = {
     {
       project: [logoSpotify, "Spotift"],
       budget: (
-        <SoftTypography variant="button" color="text" fontWeight="medium">
+        <ArgonTypography variant="button" color="text" fontWeight="medium">
           $2,500
-        </SoftTypography>
+        </ArgonTypography>
       ),
       status: (
-        <SoftTypography variant="caption" color="text" fontWeight="medium">
+        <ArgonTypography variant="caption" color="text" fontWeight="medium">
           working
-        </SoftTypography>
+        </ArgonTypography>
       ),
       completion: <Completion value={60} color="info" />,
       action,
@@ -62,14 +62,14 @@ const projectsTableData = {
     {
       project: [logoInvesion, "Invesion"],
       budget: (
-        <SoftTypography variant="button" color="text" fontWeight="medium">
+        <ArgonTypography variant="button" color="text" fontWeight="medium">
           $5,000
-        </SoftTypography>
+        </ArgonTypography>
       ),
       status: (
-        <SoftTypography variant="caption" color="text" fontWeight="medium">
+        <ArgonTypography variant="caption" color="text" fontWeight="medium">
           done
-        </SoftTypography>
+        </ArgonTypography>
       ),
       completion: <Completion value={100} color="success" />,
       action,
@@ -77,14 +77,14 @@ const projectsTableData = {
     {
       project: [logoJira, "Jira"],
       budget: (
-        <SoftTypography variant="button" color="text" fontWeight="medium">
+        <ArgonTypography variant="button" color="text" fontWeight="medium">
           $3,400
-        </SoftTypography>
+        </ArgonTypography>
       ),
       status: (
-        <SoftTypography variant="caption" color="text" fontWeight="medium">
+        <ArgonTypography variant="caption" color="text" fontWeight="medium">
           canceled
-        </SoftTypography>
+        </ArgonTypography>
       ),
       completion: <Completion value={30} color="error" />,
       action,
@@ -92,14 +92,14 @@ const projectsTableData = {
     {
       project: [logoSlack, "Slack"],
       budget: (
-        <SoftTypography variant="button" color="text" fontWeight="medium">
+        <ArgonTypography variant="button" color="text" fontWeight="medium">
           $1,400
-        </SoftTypography>
+        </ArgonTypography>
       ),
       status: (
-        <SoftTypography variant="caption" color="text" fontWeight="medium">
+        <ArgonTypography variant="caption" color="text" fontWeight="medium">
           canceled
-        </SoftTypography>
+        </ArgonTypography>
       ),
       completion: <Completion value={0} color="error" />,
       action,
@@ -107,14 +107,14 @@ const projectsTableData = {
     {
       project: [logoWebDev, "Webdev"],
       budget: (
-        <SoftTypography variant="button" color="text" fontWeight="medium">
+        <ArgonTypography variant="button" color="text" fontWeight="medium">
           $14,000
-        </SoftTypography>
+        </ArgonTypography>
       ),
       status: (
-        <SoftTypography variant="caption" color="text" fontWeight="medium">
+        <ArgonTypography variant="caption" color="text" fontWeight="medium">
           working
-        </SoftTypography>
+        </ArgonTypography>
       ),
       completion: <Completion value={80} color="info" />,
       action,
@@ -122,14 +122,14 @@ const projectsTableData = {
     {
       project: [logoXD, "Adobe XD"],
       budget: (
-        <SoftTypography variant="button" color="text" fontWeight="medium">
+        <ArgonTypography variant="button" color="text" fontWeight="medium">
           $2,300
-        </SoftTypography>
+        </ArgonTypography>
       ),
       status: (
-        <SoftTypography variant="caption" color="text" fontWeight="medium">
+        <ArgonTypography variant="caption" color="text" fontWeight="medium">
           done
-        </SoftTypography>
+        </ArgonTypography>
       ),
       completion: <Completion value={100} color="success" />,
       action,

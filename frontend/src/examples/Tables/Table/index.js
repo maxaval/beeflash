@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -27,18 +27,16 @@ import TableBody from "@mui/material/TableBody";
 import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftAvatar from "components/SoftAvatar";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonAvatar from "components/ArgonAvatar";
+import ArgonTypography from "components/ArgonTypography";
 
-// Soft UI Dashboard React base styles
-import colors from "assets/theme/base/colors";
+// Argon Dashboard 2 MUI base styles
 import typography from "assets/theme/base/typography";
 import borders from "assets/theme/base/borders";
 
 function Table({ columns, rows }) {
-  const { light } = colors;
   const { size, fontWeightBold } = typography;
   const { borderWidth } = borders;
 
@@ -58,7 +56,7 @@ function Table({ columns, rows }) {
     }
 
     return (
-      <SoftBox
+      <ArgonBox
         key={name}
         component="th"
         width={width || "auto"}
@@ -71,10 +69,10 @@ function Table({ columns, rows }) {
         fontWeight={fontWeightBold}
         color="secondary"
         opacity={0.7}
-        borderBottom={`${borderWidth[1]} solid ${light.main}`}
+        sx={({ palette: { light } }) => ({ borderBottom: `${borderWidth[1]} solid ${light.main}` })}
       >
         {name.toUpperCase()}
-      </SoftBox>
+      </ArgonBox>
     );
   });
 
@@ -86,40 +84,46 @@ function Table({ columns, rows }) {
 
       if (Array.isArray(row[name])) {
         template = (
-          <SoftBox
+          <ArgonBox
             key={uuidv4()}
             component="td"
             p={1}
-            borderBottom={row.hasBorder ? `${borderWidth[1]} solid ${light.main}` : null}
+            sx={({ palette: { light } }) => ({
+              borderBottom: row.hasBorder ? `${borderWidth[1]} solid ${light.main}` : null,
+            })}
           >
-            <SoftBox display="flex" alignItems="center" py={0.5} px={1}>
-              <SoftBox mr={2}>
-                <SoftAvatar src={row[name][0]} name={row[name][1]} variant="rounded" size="sm" />
-              </SoftBox>
-              <SoftTypography variant="button" fontWeight="medium" sx={{ width: "max-content" }}>
+            <ArgonBox display="flex" alignItems="center" py={0.5} px={1}>
+              <ArgonBox mr={2}>
+                <ArgonAvatar src={row[name][0]} name={row[name][1]} variant="rounded" size="sm" />
+              </ArgonBox>
+              <ArgonTypography variant="button" fontWeight="medium" sx={{ width: "max-content" }}>
                 {row[name][1]}
-              </SoftTypography>
-            </SoftBox>
-          </SoftBox>
+              </ArgonTypography>
+            </ArgonBox>
+          </ArgonBox>
         );
       } else {
         template = (
-          <SoftBox
+          <ArgonBox
             key={uuidv4()}
             component="td"
             p={1}
             textAlign={align}
-            borderBottom={row.hasBorder ? `${borderWidth[1]} solid ${light.main}` : null}
+            verticalAlign="middle"
+            lineHeight={0.65}
+            sx={({ palette: { light } }) => ({
+              borderBottom: row.hasBorder ? `${borderWidth[1]} solid ${light.main}` : null,
+            })}
           >
-            <SoftTypography
+            <ArgonTypography
               variant="button"
               fontWeight="regular"
               color="secondary"
               sx={{ display: "inline-block", width: "max-content" }}
             >
               {row[name]}
-            </SoftTypography>
-          </SoftBox>
+            </ArgonTypography>
+          </ArgonBox>
         );
       }
 
@@ -133,9 +137,9 @@ function Table({ columns, rows }) {
     () => (
       <TableContainer>
         <MuiTable>
-          <SoftBox component="thead">
+          <ArgonBox component="thead">
             <TableRow>{renderColumns}</TableRow>
-          </SoftBox>
+          </ArgonBox>
           <TableBody>{renderRows}</TableBody>
         </MuiTable>
       </TableContainer>

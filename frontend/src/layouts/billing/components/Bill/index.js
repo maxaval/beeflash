@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -19,76 +19,84 @@ import PropTypes from "prop-types";
 // @mui material components
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftButton from "components/SoftButton";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
+import ArgonButton from "components/ArgonButton";
+
+// Argon Dashboard 2 MUI contexts
+import { useArgonController } from "context";
 
 function Bill({ name, company, email, vat, noGutter }) {
+  const [controller] = useArgonController();
+  const { darkMode } = controller;
+
   return (
-    <SoftBox
+    <ArgonBox
       component="li"
       display="flex"
       justifyContent="space-between"
       alignItems="flex-start"
-      bgColor="grey-100"
       borderRadius="lg"
       p={3}
       mb={noGutter ? 0 : 1}
       mt={2}
+      sx={({ palette: { grey, background } }) => ({
+        backgroundColor: darkMode ? background.default : grey[100],
+      })}
     >
-      <SoftBox width="100%" display="flex" flexDirection="column">
-        <SoftBox
+      <ArgonBox width="100%" display="flex" flexDirection="column">
+        <ArgonBox
           display="flex"
           justifyContent="space-between"
           alignItems={{ xs: "flex-start", sm: "center" }}
           flexDirection={{ xs: "column", sm: "row" }}
-          mb={2}
+          mb={1}
         >
-          <SoftTypography variant="button" fontWeight="medium" textTransform="capitalize">
+          <ArgonTypography variant="button" fontWeight="medium" textTransform="capitalize">
             {name}
-          </SoftTypography>
+          </ArgonTypography>
 
-          <SoftBox
+          <ArgonBox
             display="flex"
             alignItems="center"
             mt={{ xs: 2, sm: 0 }}
             ml={{ xs: -1.5, sm: 0 }}
           >
-            <SoftBox mr={1}>
-              <SoftButton variant="text" color="error">
-                <Icon>delete</Icon>&nbsp;delete
-              </SoftButton>
-            </SoftBox>
-            <SoftButton variant="text" color="dark">
-              <Icon>edit</Icon>&nbsp;edit
-            </SoftButton>
-          </SoftBox>
-        </SoftBox>
-        <SoftBox mb={1} lineHeight={0}>
-          <SoftTypography variant="caption" color="text">
+            <ArgonBox mr={1}>
+              <ArgonButton variant="text" color="error">
+                <Icon>delete</Icon>&nbsp;Delete
+              </ArgonButton>
+            </ArgonBox>
+            <ArgonButton variant="text" color="dark">
+              <Icon>edit</Icon>&nbsp;Edit
+            </ArgonButton>
+          </ArgonBox>
+        </ArgonBox>
+        <ArgonBox mb={1} lineHeight={0}>
+          <ArgonTypography variant="caption" color="text">
             Company Name:&nbsp;&nbsp;&nbsp;
-            <SoftTypography variant="caption" fontWeight="medium" textTransform="capitalize">
+            <ArgonTypography variant="caption" fontWeight="medium" textTransform="capitalize">
               {company}
-            </SoftTypography>
-          </SoftTypography>
-        </SoftBox>
-        <SoftBox mb={1} lineHeight={0}>
-          <SoftTypography variant="caption" color="text">
+            </ArgonTypography>
+          </ArgonTypography>
+        </ArgonBox>
+        <ArgonBox mb={1} lineHeight={0}>
+          <ArgonTypography variant="caption" color="text">
             Email Address:&nbsp;&nbsp;&nbsp;
-            <SoftTypography variant="caption" fontWeight="medium">
+            <ArgonTypography variant="caption" fontWeight="medium">
               {email}
-            </SoftTypography>
-          </SoftTypography>
-        </SoftBox>
-        <SoftTypography variant="caption" color="text">
+            </ArgonTypography>
+          </ArgonTypography>
+        </ArgonBox>
+        <ArgonTypography variant="caption" color="text">
           VAT Number:&nbsp;&nbsp;&nbsp;
-          <SoftTypography variant="caption" fontWeight="medium">
+          <ArgonTypography variant="caption" fontWeight="medium">
             {vat}
-          </SoftTypography>
-        </SoftTypography>
-      </SoftBox>
-    </SoftBox>
+          </ArgonTypography>
+        </ArgonTypography>
+      </ArgonBox>
+    </ArgonBox>
   );
 }
 

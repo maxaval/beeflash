@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -19,82 +19,75 @@ import PropTypes from "prop-types";
 // @mui material components
 import Grid from "@mui/material/Grid";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
-// Soft UI Dashboard React examples
+// Argon Dashboard 2 MUI example components
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import PageLayout from "examples/LayoutContainers/PageLayout";
 
 // Authentication layout components
 import Footer from "layouts/authentication/components/Footer";
 
-function CoverLayout({ color, header, title, description, image, top, children }) {
+function CoverLayout({ title, description, image, imgPosition, button, children }) {
   return (
-    <PageLayout background="white">
-      <DefaultNavbar
-        action={{
-          type: "external",
-          route: "https://creative-tim.com/product/soft-ui-dashboard-react",
-          label: "free download",
-          color: "dark",
-        }}
-      />
-      <Grid
-        container
-        justifyContent="center"
+    <PageLayout>
+      <ArgonBox mt={1}>
+        <DefaultNavbar
+          action={{
+            type: "external",
+            route: "https://creative-tim.com/product/argon-dashboard-material-ui",
+            label: "Free Download",
+            ...button,
+          }}
+          transparent
+          light
+        />
+      </ArgonBox>
+      <ArgonBox
+        width="calc(100% - 2rem)"
+        minHeight="50vh"
+        borderRadius="lg"
+        mx={2}
+        mt={2}
+        mb={8}
+        pt={18}
+        pb={20}
         sx={{
-          minHeight: "75vh",
-          margin: 0,
+          backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
+            image &&
+            `${linearGradient(
+              rgba(gradients.dark.main, 0.6),
+              rgba(gradients.dark.state, 0.6)
+            )}, url(${image})`,
+          backgroundSize: "cover",
+          backgroundPosition: imgPosition,
+          backgroundRepeat: "no-repeat",
         }}
       >
-        <Grid item xs={11} sm={8} md={5} xl={3}>
-          <SoftBox mt={top}>
-            <SoftBox pt={3} px={3}>
-              {!header ? (
-                <>
-                  <SoftBox mb={1}>
-                    <SoftTypography variant="h3" fontWeight="bold" color={color} textGradient>
-                      {title}
-                    </SoftTypography>
-                  </SoftBox>
-                  <SoftTypography variant="body2" fontWeight="regular" color="text">
-                    {description}
-                  </SoftTypography>
-                </>
-              ) : (
-                header
-              )}
-            </SoftBox>
-            <SoftBox p={3}>{children}</SoftBox>
-          </SoftBox>
+        <Grid container spacing={3} justifyContent="center" sx={{ textAlign: "center" }}>
+          <Grid item xs={10} lg={4}>
+            <ArgonBox mb={1}>
+              <ArgonTypography variant="h1" color="white" fontWeight="bold">
+                {title}
+              </ArgonTypography>
+            </ArgonBox>
+            <ArgonBox mb={2}>
+              <ArgonTypography variant="body2" color="white" fontWeight="regular">
+                {description}
+              </ArgonTypography>
+            </ArgonBox>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={5}>
-          <SoftBox
-            height="100%"
-            display={{ xs: "none", md: "block" }}
-            position="relative"
-            right={{ md: "-12rem", xl: "-16rem" }}
-            mr={-16}
-            sx={{
-              transform: "skewX(-10deg)",
-              overflow: "hidden",
-              borderBottomLeftRadius: ({ borders: { borderRadius } }) => borderRadius.lg,
-            }}
-          >
-            <SoftBox
-              ml={-8}
-              height="100%"
-              sx={{
-                backgroundImage: `url(${image})`,
-                backgroundSize: "cover",
-                transform: "skewX(10deg)",
-              }}
-            />
-          </SoftBox>
+      </ArgonBox>
+      <ArgonBox mt={{ xs: -26, lg: -24 }} px={1} width="calc(100% - 2rem)" mx="auto">
+        <Grid container justifyContent="center">
+          <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
+            {children}
+          </Grid>
         </Grid>
-      </Grid>
+      </ArgonBox>
       <Footer />
     </PageLayout>
   );
@@ -102,30 +95,19 @@ function CoverLayout({ color, header, title, description, image, top, children }
 
 // Setting default values for the props of CoverLayout
 CoverLayout.defaultProps = {
-  header: "",
   title: "",
   description: "",
-  color: "info",
-  top: 20,
+  imgPosition: "center",
+  button: { color: "white" },
 };
 
 // Typechecking props for the CoverLayout
 CoverLayout.propTypes = {
-  color: PropTypes.oneOf([
-    "primary",
-    "secondary",
-    "info",
-    "success",
-    "warning",
-    "error",
-    "dark",
-    "light",
-  ]),
-  header: PropTypes.node,
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string.isRequired,
-  top: PropTypes.number,
+  imgPosition: PropTypes.string,
+  button: PropTypes.object,
   children: PropTypes.node.isRequired,
 };
 

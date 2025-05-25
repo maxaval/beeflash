@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -21,19 +21,19 @@ import { useLocation, Link } from "react-router-dom";
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
-// @material-ui core components
+// @mui core components
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftInput from "components/SoftInput";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
+import ArgonInput from "components/ArgonInput";
 
-// Soft UI Dashboard React examples
+// Argon Dashboard 2 MUI example components
 import Breadcrumbs from "examples/Breadcrumbs";
 import NotificationItem from "examples/Items/NotificationItem";
 
@@ -43,12 +43,13 @@ import {
   navbarContainer,
   navbarRow,
   navbarIconButton,
+  navbarDesktopMenu,
   navbarMobileMenu,
 } from "examples/Navbars/DashboardNavbar/styles";
 
-// Soft UI Dashboard React context
+// Argon Dashboard 2 MUI context
 import {
-  useSoftUIController,
+  useArgonController,
   setTransparentNavbar,
   setMiniSidenav,
   setOpenConfigurator,
@@ -60,7 +61,7 @@ import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
 
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
-  const [controller, dispatch] = useSoftUIController();
+  const [controller, dispatch] = useArgonController();
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator } = controller;
   const [openMenu, setOpenMenu] = useState(false);
   const route = useLocation().pathname.split("/").slice(1);
@@ -141,50 +142,64 @@ function DashboardNavbar({ absolute, light, isMini }) {
       color="inherit"
       sx={(theme) => navbar(theme, { transparentNavbar, absolute, light })}
     >
-      <Toolbar sx={(theme) => navbarContainer(theme)}>
-        <SoftBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
-          <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} light={light} />
-        </SoftBox>
+      <Toolbar sx={(theme) => navbarContainer(theme, { navbarType })}>
+        <ArgonBox
+          color={light && transparentNavbar ? "white" : "dark"}
+          mb={{ xs: 1, md: 0 }}
+          sx={(theme) => navbarRow(theme, { isMini })}
+        >
+          <Breadcrumbs
+            icon="home"
+            title={route[route.length - 1]}
+            route={route}
+            light={transparentNavbar ? light : false}
+          />
+          <Icon fontSize="medium" sx={navbarDesktopMenu} onClick={handleMiniSidenav}>
+            {miniSidenav ? "menu_open" : "menu"}
+          </Icon>
+        </ArgonBox>
         {isMini ? null : (
-          <SoftBox sx={(theme) => navbarRow(theme, { isMini })}>
-            <SoftBox pr={1}>
-              <SoftInput
+          <ArgonBox sx={(theme) => navbarRow(theme, { isMini })}>
+            <ArgonBox pr={1}>
+              <ArgonInput
                 placeholder="Type here..."
-                icon={{ component: "search", direction: "left" }}
+                startAdornment={
+                  <Icon fontSize="small" style={{ marginRight: "6px" }}>
+                    search
+                  </Icon>
+                }
               />
-            </SoftBox>
-            <SoftBox color={light ? "white" : "inherit"}>
-              <Link to="/authentication/sign-in">
+            </ArgonBox>
+            <ArgonBox color={light ? "white" : "inherit"}>
+              <Link to="/authentication/sign-in/basic">
                 <IconButton sx={navbarIconButton} size="small">
                   <Icon
                     sx={({ palette: { dark, white } }) => ({
-                      color: light ? white.main : dark.main,
+                      color: light && transparentNavbar ? white.main : dark.main,
                     })}
                   >
                     account_circle
                   </Icon>
-                  <SoftTypography
+                  <ArgonTypography
                     variant="button"
                     fontWeight="medium"
-                    color={light ? "white" : "dark"}
+                    color={light && transparentNavbar ? "white" : "dark"}
                   >
                     Sign in
-                  </SoftTypography>
+                  </ArgonTypography>
                 </IconButton>
               </Link>
               <IconButton
                 size="small"
-                color="inherit"
+                color={light && transparentNavbar ? "white" : "dark"}
                 sx={navbarMobileMenu}
                 onClick={handleMiniSidenav}
               >
-                <Icon className={light ? "text-white" : "text-dark"}>
-                  {miniSidenav ? "menu_open" : "menu"}
-                </Icon>
+                <Icon>{miniSidenav ? "menu_open" : "menu"}</Icon>
               </IconButton>
               <IconButton
                 size="small"
-                color="inherit"
+                color={light && transparentNavbar ? "white" : "dark"}
                 sx={navbarIconButton}
                 onClick={handleConfiguratorOpen}
               >
@@ -192,18 +207,18 @@ function DashboardNavbar({ absolute, light, isMini }) {
               </IconButton>
               <IconButton
                 size="small"
-                color="inherit"
+                color={light && transparentNavbar ? "white" : "dark"}
                 sx={navbarIconButton}
                 aria-controls="notification-menu"
                 aria-haspopup="true"
                 variant="contained"
                 onClick={handleOpenMenu}
               >
-                <Icon className={light ? "text-white" : "text-dark"}>notifications</Icon>
+                <Icon>notifications</Icon>
               </IconButton>
               {renderMenu()}
-            </SoftBox>
-          </SoftBox>
+            </ArgonBox>
+          </ArgonBox>
         )}
       </Toolbar>
     </AppBar>
@@ -213,7 +228,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
 // Setting default values for the props of DashboardNavbar
 DashboardNavbar.defaultProps = {
   absolute: false,
-  light: false,
+  light: true,
   isMini: false,
 };
 

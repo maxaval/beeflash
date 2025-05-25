@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -14,18 +14,28 @@ Coded by www.creative-tim.com
 */
 
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "App";
 
-// Soft UI Dashboard React Context Provider
-import { SoftUIControllerProvider } from "context";
+// Soft UI Context Provider
+import { ArgonControllerProvider } from "context";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+// react-perfect-scrollbar component
+import PerfectScrollbar from "react-perfect-scrollbar";
+
+// react-perfect-scrollbar styles
+import "react-perfect-scrollbar/dist/css/styles.css";
+
+const container = document.getElementById("root");
+const root = createRoot(container);
+
 root.render(
   <BrowserRouter>
-    <SoftUIControllerProvider>
-      <App />
-    </SoftUIControllerProvider>
+    <ArgonControllerProvider>
+      <PerfectScrollbar>
+        <App />
+      </PerfectScrollbar>
+    </ArgonControllerProvider>
   </BrowserRouter>
 );

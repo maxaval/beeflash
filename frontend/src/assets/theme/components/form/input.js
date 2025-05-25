@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v3.1.0
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -13,7 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// Soft UI Dashboard React Base Styles
+// Argon Dashboard 2 MUI Base Styles
 import colors from "assets/theme/base/colors";
 import borders from "assets/theme/base/borders";
 
@@ -27,7 +27,7 @@ const input = {
   styleOverrides: {
     root: {
       display: "flex !important",
-      padding: `${pxToRem(8)} ${pxToRem(28)} ${pxToRem(8)} ${pxToRem(12)} !important`,
+      padding: `${pxToRem(8)} ${pxToRem(12)}`,
       border: `${borderWidth[1]} solid ${inputColors.borderColor.main}`,
       borderRadius: `${borderRadius.md} !important`,
 

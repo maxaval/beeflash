@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -17,23 +17,23 @@ Coded by www.creative-tim.com
 import Card from "@mui/material/Card";
 import Tooltip from "@mui/material/Tooltip";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
 function Emails() {
   return (
     <Card>
-      <SoftBox display="flex" justifyContent="space-between" p={3} lineHeight={1}>
-        <SoftTypography variant="body2" color="text">
+      <ArgonBox display="flex" justifyContent="space-between" p={3} lineHeight={1}>
+        <ArgonTypography variant="body2" color="text">
           Emails (21)
-        </SoftTypography>
+        </ArgonTypography>
         <Tooltip title="Check your emails" placement="top">
-          <SoftBox component="a" href="#">
-            <SoftTypography variant="body2">Check</SoftTypography>
-          </SoftBox>
+          <ArgonBox component="a" href="#">
+            <ArgonTypography variant="body2">Check</ArgonTypography>
+          </ArgonBox>
         </Tooltip>
-      </SoftBox>
+      </ArgonBox>
     </Card>
   );
 }

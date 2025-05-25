@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -19,9 +19,9 @@ import PropTypes from "prop-types";
 // @mui material components
 import Card from "@mui/material/Card";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
 // Timeline context
 import { TimelineProvider } from "examples/Timeline/context";
@@ -30,14 +30,14 @@ function TimelineList({ title, dark, children }) {
   return (
     <TimelineProvider value={dark}>
       <Card>
-        <SoftBox bgColor={dark ? "dark" : "white"} variant="gradient">
-          <SoftBox pt={3} px={3}>
-            <SoftTypography variant="h6" fontWeight="medium" color={dark ? "white" : "dark"}>
+        <ArgonBox bgColor={dark ? "dark" : "white"} variant="gradient">
+          <ArgonBox pt={3} px={3}>
+            <ArgonTypography variant="h6" fontWeight="medium" color={dark ? "white" : "dark"}>
               {title}
-            </SoftTypography>
-          </SoftBox>
-          <SoftBox p={2}>{children}</SoftBox>
-        </SoftBox>
+            </ArgonTypography>
+          </ArgonBox>
+          <ArgonBox p={2}>{children}</ArgonBox>
+        </ArgonBox>
       </Card>
     </TimelineProvider>
   );

@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -22,16 +22,16 @@ import PropTypes from "prop-types";
 import MenuItem from "@mui/material/MenuItem";
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
 // custom styles for the NotificationItem
 import { menuItem, menuImage } from "examples/Items/NotificationItem/styles";
 
 const NotificationItem = forwardRef(({ color, image, title, date, ...rest }, ref) => (
   <MenuItem {...rest} ref={ref} sx={(theme) => menuItem(theme)}>
-    <SoftBox
+    <ArgonBox
       width="2.25rem"
       height="2.25rem"
       mt={0.25}
@@ -41,12 +41,12 @@ const NotificationItem = forwardRef(({ color, image, title, date, ...rest }, ref
       sx={(theme) => menuImage(theme, { color })}
     >
       {image}
-    </SoftBox>
-    <SoftBox>
-      <SoftTypography variant="button" textTransform="capitalize" fontWeight="regular">
+    </ArgonBox>
+    <ArgonBox>
+      <ArgonTypography variant="button" textTransform="capitalize" fontWeight="regular">
         <strong>{title[0]}</strong> {title[1]}
-      </SoftTypography>
-      <SoftTypography
+      </ArgonTypography>
+      <ArgonTypography
         variant="caption"
         color="secondary"
         sx={{
@@ -55,7 +55,7 @@ const NotificationItem = forwardRef(({ color, image, title, date, ...rest }, ref
           mt: 0.5,
         }}
       >
-        <SoftTypography variant="button" color="secondary">
+        <ArgonTypography variant="button" color="secondary">
           <Icon
             sx={{
               lineHeight: 1.2,
@@ -64,10 +64,10 @@ const NotificationItem = forwardRef(({ color, image, title, date, ...rest }, ref
           >
             watch_later
           </Icon>
-        </SoftTypography>
+        </ArgonTypography>
         {date}
-      </SoftTypography>
-    </SoftBox>
+      </ArgonTypography>
+    </ArgonBox>
   </MenuItem>
 ));
 

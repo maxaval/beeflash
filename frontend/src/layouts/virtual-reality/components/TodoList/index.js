@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -19,71 +19,76 @@ import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
 import Tooltip from "@mui/material/Tooltip";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
+
+import { useArgonController } from "context";
 
 function TodoList() {
+  const [controller] = useArgonController();
+  const { darkMode } = controller;
+
   return (
     <Card sx={{ height: "100%" }}>
-      <SoftBox p={3}>
-        <SoftBox display="flex" lineHeight={1}>
-          <SoftBox mr={2}>
-            <SoftTypography variant="h6" fontWeight="medium">
+      <ArgonBox p={3}>
+        <ArgonBox display="flex" lineHeight={1}>
+          <ArgonBox mr={2}>
+            <ArgonTypography variant="h6" fontWeight="medium">
               08:00
-            </SoftTypography>
-          </SoftBox>
-          <SoftBox>
-            <SoftTypography variant="h6" fontWeight="medium">
+            </ArgonTypography>
+          </ArgonBox>
+          <ArgonBox>
+            <ArgonTypography variant="h6" fontWeight="medium">
               Synk up with Mark
-            </SoftTypography>
-            <SoftTypography variant="button" fontWeight="regular" color="secondary">
+            </ArgonTypography>
+            <ArgonTypography variant="button" fontWeight="regular" color="secondary">
               Hangouts
-            </SoftTypography>
-          </SoftBox>
-        </SoftBox>
+            </ArgonTypography>
+          </ArgonBox>
+        </ArgonBox>
         <Divider />
-        <SoftBox display="flex" lineHeight={0}>
-          <SoftBox mr={2}>
-            <SoftTypography variant="h6" fontWeight="medium">
+        <ArgonBox display="flex" lineHeight={0}>
+          <ArgonBox mr={2}>
+            <ArgonTypography variant="h6" fontWeight="medium">
               09:30
-            </SoftTypography>
-          </SoftBox>
-          <SoftBox>
-            <SoftTypography variant="h6" fontWeight="medium">
+            </ArgonTypography>
+          </ArgonBox>
+          <ArgonBox>
+            <ArgonTypography variant="h6" fontWeight="medium">
               Gym
-            </SoftTypography>
-            <SoftTypography variant="button" fontWeight="regular" color="secondary">
+            </ArgonTypography>
+            <ArgonTypography variant="button" fontWeight="regular" color="secondary">
               World Class
-            </SoftTypography>
-          </SoftBox>
-        </SoftBox>
+            </ArgonTypography>
+          </ArgonBox>
+        </ArgonBox>
         <Divider />
-        <SoftBox display="flex" lineHeight={1}>
-          <SoftBox mr={2}>
-            <SoftTypography variant="h6" fontWeight="medium">
+        <ArgonBox display="flex" lineHeight={1}>
+          <ArgonBox mr={2}>
+            <ArgonTypography variant="h6" fontWeight="medium">
               11:00
-            </SoftTypography>
-          </SoftBox>
-          <SoftBox>
-            <SoftTypography variant="h6" fontWeight="medium">
+            </ArgonTypography>
+          </ArgonBox>
+          <ArgonBox>
+            <ArgonTypography variant="h6" fontWeight="medium">
               Design Review
-            </SoftTypography>
-            <SoftTypography variant="button" fontWeight="regular" color="secondary">
+            </ArgonTypography>
+            <ArgonTypography variant="button" fontWeight="regular" color="secondary">
               Zoom
-            </SoftTypography>
-          </SoftBox>
-        </SoftBox>
-      </SoftBox>
-      <SoftBox bgColor="grey-100" mt="auto">
+            </ArgonTypography>
+          </ArgonBox>
+        </ArgonBox>
+      </ArgonBox>
+      <ArgonBox bgColor={darkMode ? "transparent" : "grey-100"} mt="auto">
         <Tooltip title="Show More" placement="top" sx={{ cursor: "pointer" }}>
-          <SoftBox textAlign="center" py={0.5} color="info" lineHeight={0}>
+          <ArgonBox textAlign="center" py={0.5} color="info" lineHeight={0}>
             <Icon sx={{ fontWeight: "bold" }} color="inherit" fontSize="default">
               keyboard_arrow_down
             </Icon>
-          </SoftBox>
+          </ArgonBox>
         </Tooltip>
-      </SoftBox>
+      </ArgonBox>
     </Card>
   );
 }

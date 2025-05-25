@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -25,11 +25,11 @@ import { Bar } from "react-chartjs-2";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
-// Soft UI Dashboard React examples
+// Argon Dashboard 2 MUI example components
 import BarReportsChartItem from "examples/Charts/BarCharts/ReportsBarChart/ReportsBarChartItem";
 
 // ReportsBarChart configurations
@@ -51,10 +51,10 @@ function ReportsBarChart({ color, title, description, chart, items }) {
 
   return (
     <Card sx={{ height: "100%" }}>
-      <SoftBox padding="1rem">
+      <ArgonBox padding="1rem">
         {useMemo(
           () => (
-            <SoftBox
+            <ArgonBox
               variant="gradient"
               bgColor={color}
               borderRadius="lg"
@@ -64,26 +64,26 @@ function ReportsBarChart({ color, title, description, chart, items }) {
               height="12.5rem"
             >
               <Bar data={data} options={options} />
-            </SoftBox>
+            </ArgonBox>
           ),
           [chart, color]
         )}
-        <SoftBox px={1}>
-          <SoftBox mb={2}>
-            <SoftTypography variant="h6" fontWeight="medium" textTransform="capitalize">
+        <ArgonBox px={1}>
+          <ArgonBox mb={2}>
+            <ArgonTypography variant="h6" fontWeight="medium" textTransform="capitalize">
               {title}
-            </SoftTypography>
-            <SoftTypography component="div" variant="button" color="text" fontWeight="regular">
+            </ArgonTypography>
+            <ArgonTypography component="div" variant="button" color="text" fontWeight="regular">
               {description}
-            </SoftTypography>
-          </SoftBox>
-          <SoftBox py={1} px={0.5}>
+            </ArgonTypography>
+          </ArgonBox>
+          <ArgonBox py={1} px={0.5}>
             <Grid container spacing={2}>
               {renderItems}
             </Grid>
-          </SoftBox>
-        </SoftBox>
-      </SoftBox>
+          </ArgonBox>
+        </ArgonBox>
+      </ArgonBox>
     </Card>
   );
 }

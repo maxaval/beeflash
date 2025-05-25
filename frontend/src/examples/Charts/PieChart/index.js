@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -24,9 +24,9 @@ import { Pie } from "react-chartjs-2";
 // @mui material components
 import Card from "@mui/material/Card";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
 // PieChart configurations
 import configs from "examples/Charts/PieChart/configs";
@@ -35,30 +35,30 @@ function PieChart({ title, description, height, chart }) {
   const { data, options } = configs(chart.labels || [], chart.datasets || {});
 
   const renderChart = (
-    <SoftBox p={2}>
+    <ArgonBox p={2}>
       {title || description ? (
-        <SoftBox px={description ? 1 : 0} pt={description ? 1 : 0}>
+        <ArgonBox px={description ? 1 : 0} pt={description ? 1 : 0}>
           {title && (
-            <SoftBox mb={1}>
-              <SoftTypography variant="h6">{title}</SoftTypography>
-            </SoftBox>
+            <ArgonBox mb={1}>
+              <ArgonTypography variant="h6">{title}</ArgonTypography>
+            </ArgonBox>
           )}
-          <SoftBox mb={2}>
-            <SoftTypography component="div" variant="button" fontWeight="regular" color="text">
+          <ArgonBox mb={2}>
+            <ArgonTypography component="div" variant="button" fontWeight="regular" color="text">
               {description}
-            </SoftTypography>
-          </SoftBox>
-        </SoftBox>
+            </ArgonTypography>
+          </ArgonBox>
+        </ArgonBox>
       ) : null}
       {useMemo(
         () => (
-          <SoftBox height={height}>
+          <ArgonBox height={height}>
             <Pie data={data} options={options} />
-          </SoftBox>
+          </ArgonBox>
         ),
         [chart, height]
       )}
-    </SoftBox>
+    </ArgonBox>
   );
 
   return title || description ? <Card>{renderChart}</Card> : renderChart;

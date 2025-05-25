@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v3.1.0
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -14,18 +14,18 @@ Coded by www.creative-tim.com
 */
 
 /**
- * The base box-shadow styles for the Soft UI Dashboard React.
+ * The base box-shadow styles for the Argon Dashboard 2 MUI.
  * You can add new box-shadow using this file.
- * You can customized the box-shadow for the entire Soft UI Dashboard React using thie file.
+ * You can customized the box-shadow for the entire Argon Dashboard 2 MUI using thie file.
  */
 
-// Soft UI Dashboard React Base Styles
+// Argon Dashboard 2 MUI Base Styles
 import colors from "assets/theme/base/colors";
 
-// Soft UI Dashboard React Helper Functions
+// Argon Dashboard 2 MUI Helper Functions
 import boxShadow from "assets/theme/functions/boxShadow";
 
-const { black, white, info, inputColors, tabs } = colors;
+const { black, white, info, tabs, dark, text } = colors;
 
 const boxShadows = {
   xs: boxShadow([0, 2], [9, -5], black.main, 0.15),
@@ -51,26 +51,28 @@ const boxShadows = {
     black.main,
     0.05
   )}`,
+  cardBoxShadow: `${boxShadow([0, 0], [16, 0], text.main, 0.075)}`,
   buttonBoxShadow: {
-    main: `${boxShadow([0, 4], [7, -1], black.main, 0.11)}, ${boxShadow(
-      [0, 2],
-      [4, -1],
+    main: `${boxShadow([0, 4], [6, 0], dark.main, 0.1)}, ${boxShadow(
+      [0, 1],
+      [3, 0],
       black.main,
-      0.07
+      0.08
     )}`,
-    stateOf: `${boxShadow([0, 3], [5, -1], black.main, 0.09)}, ${boxShadow(
-      [0, 2],
-      [5, -1],
+    stateOf: `${boxShadow([0, 7], [14, 0], dark.main, 0.1)}, ${boxShadow(
+      [0, 3],
+      [6, 0],
       black.main,
-      0.07
+      0.08
     )}`,
     stateOfNotHover: boxShadow([0, 0], [0, 3.2], info.main, 0.5),
   },
-  inputBoxShadow: {
-    focus: boxShadow([0, 0], [0, 2], inputColors.boxShadow, 1),
-    error: boxShadow([0, 0], [0, 2], inputColors.error, 0.6),
-    success: boxShadow([0, 0], [0, 2], inputColors.success, 0.6),
-  },
+  inputBoxShadow: `${boxShadow([0, 3], [9, 0], info.main, 0)}, ${boxShadow(
+    [3, 4],
+    [8, 0],
+    info.main,
+    0.1
+  )}`,
   sliderBoxShadow: {
     thumb: boxShadow([0, 1], [13, 0], black.main, 0.2),
   },

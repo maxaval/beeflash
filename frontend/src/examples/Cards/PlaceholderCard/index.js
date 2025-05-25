@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -20,9 +20,9 @@ import PropTypes from "prop-types";
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
 function PlaceholderCard({ icon, title, hasBorder, outlined }) {
   return (
@@ -35,7 +35,7 @@ function PlaceholderCard({ icon, title, hasBorder, outlined }) {
         border: hasBorder || outlined ? `${borderWidth[1]} solid ${borderColor}` : "none",
       })}
     >
-      <SoftBox
+      <ArgonBox
         display="flex"
         flexDirection="column"
         justifyContent="center"
@@ -43,15 +43,15 @@ function PlaceholderCard({ icon, title, hasBorder, outlined }) {
         height="100%"
         p={3}
       >
-        <SoftBox color="secondary" mb={0.5}>
+        <ArgonBox color="secondary" mb={0.5}>
           <Icon fontSize="default" sx={{ fontWeight: "bold" }}>
             {icon}
           </Icon>
-        </SoftBox>
-        <SoftTypography variant={title.variant} color="secondary">
+        </ArgonBox>
+        <ArgonTypography variant={title.variant} color="secondary">
           {title.text}
-        </SoftTypography>
-      </SoftBox>
+        </ArgonTypography>
+      </ArgonBox>
     </Card>
   );
 }

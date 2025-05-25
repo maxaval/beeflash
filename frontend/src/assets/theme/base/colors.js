@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v3.1.0
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -14,14 +14,15 @@ Coded by www.creative-tim.com
 */
 
 /**
- * The base colors for the Soft UI Dashboard React.
+ * The base colors for the Argon Dashboard 2 MUI.
  * You can add new color using this file.
- * You can customized the colors for the entire Soft UI Dashboard React using thie file.
+ * You can customized the colors for the entire Argon Dashboard 2 MUI using thie file.
  */
 
 const colors = {
   background: {
     default: "#f8f9fa",
+    dark: "#172b4d",
   },
 
   text: {
@@ -45,33 +46,33 @@ const colors = {
   },
 
   primary: {
-    main: "#cb0c9f",
-    focus: "#ad0a87",
+    main: "#5e72e4",
+    focus: "#5e72e4",
   },
 
   secondary: {
     main: "#8392ab",
-    focus: "#96a2b8",
+    focus: "#8392ab",
   },
 
   info: {
-    main: "#17c1e8",
-    focus: "#3acaeb",
+    main: "#11cdef",
+    focus: "#11cdef",
   },
 
   success: {
-    main: "#82d616",
-    focus: "#95dc39",
+    main: "#2dce89",
+    focus: "#2dce89",
   },
 
   warning: {
-    main: "#fbcf33",
-    focus: "#fcd652",
+    main: "#fb6340",
+    focus: "#fb6340",
   },
 
   error: {
-    main: "#ea0606",
-    focus: "#c70505",
+    main: "#f5365c",
+    focus: "#f5365c",
   },
 
   light: {
@@ -98,8 +99,8 @@ const colors = {
 
   gradients: {
     primary: {
-      main: "#7928ca",
-      state: "#ff0080",
+      main: "#5e72e4",
+      state: "#825ee4",
     },
 
     secondary: {
@@ -108,23 +109,23 @@ const colors = {
     },
 
     info: {
-      main: "#2152ff",
-      state: "#21d4fd",
+      main: "#1171ef",
+      state: "#11cdef",
     },
 
     success: {
-      main: "#17ad37",
-      state: "#98ec2d",
+      main: "#2dce89",
+      state: "#2dcecc",
     },
 
     warning: {
-      main: "#f53939",
-      state: "#fbcf33",
+      main: "#fb6340",
+      state: "#fbb140",
     },
 
     error: {
-      main: "#ea0606",
-      state: "#ff667c",
+      main: "#f5365c",
+      state: "#f56036",
     },
 
     light: {
@@ -133,8 +134,8 @@ const colors = {
     },
 
     dark: {
-      main: "#141727",
-      state: "#3a416f",
+      main: "#212229",
+      state: "#212529",
     },
   },
 
@@ -202,9 +203,9 @@ const colors = {
 
   alertColors: {
     primary: {
-      main: "#7928ca",
-      state: "#d6006c",
-      border: "#efb6e2",
+      main: "#5e72e4",
+      state: "#673bde",
+      border: "#cfd5f7",
     },
 
     secondary: {
@@ -214,27 +215,27 @@ const colors = {
     },
 
     info: {
-      main: "#2152ff",
-      state: "#02c6f3",
-      border: "#b9ecf8",
+      main: "#1171ef",
+      state: "#0eadca",
+      border: "#b8f0fa",
     },
 
     success: {
-      main: "#17ad37",
-      state: "#84dc14",
-      border: "#daf3b9",
+      main: "#2dce89",
+      state: "#26adab",
+      border: "#c0f0dc",
     },
 
     warning: {
-      main: "#f53939",
-      state: "#fac60b",
-      border: "#fef1c2",
+      main: "#fb6340",
+      state: "#faa118",
+      border: "#fed0c6",
     },
 
     error: {
-      main: "#ea0606",
-      state: "#ff3d59",
-      border: "#f9b4b4",
+      main: "#f5365c",
+      state: "#f3410f",
+      border: "#fcc3ce",
     },
 
     light: {
@@ -244,16 +245,16 @@ const colors = {
     },
 
     dark: {
-      main: "#141727",
-      state: "#2c3154",
+      main: "#212229",
+      state: "#0f1112",
       border: "#c2c8d1",
     },
   },
 
   badgeColors: {
     primary: {
-      background: "#f883dd",
-      text: "#a3017e",
+      background: "#eaecfb",
+      text: "##2643e9",
     },
 
     secondary: {
@@ -262,23 +263,23 @@ const colors = {
     },
 
     info: {
-      background: "#abe9f7",
-      text: "#08a1c4",
+      background: "#aaedf9",
+      text: "#03acca",
     },
 
     success: {
-      background: "#cdf59b",
-      text: "#67b108",
+      background: "#b0eed3",
+      text: "#1aae6f",
     },
 
     warning: {
-      background: "#fef5d3",
-      text: "#fbc400",
+      background: "#fee6e0",
+      text: "#ff3709",
     },
 
     error: {
-      background: "#fc9797",
-      text: "#bd0000",
+      background: "#fdd1da",
+      text: "#f80031",
     },
 
     light: {
@@ -293,10 +294,9 @@ const colors = {
   },
 
   inputColors: {
-    borderColor: { main: "#d2d6da", focus: "#35d1f5" },
-    boxShadow: "#81e3f9",
-    error: "#fd5c70",
-    success: "#66d432",
+    borderColor: { main: "#d2d6da", focus: "#11cdef" },
+    error: "#f5365c",
+    success: "#2dce89",
   },
 
   sliderColors: {

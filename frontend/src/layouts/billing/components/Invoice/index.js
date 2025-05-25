@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -19,13 +19,13 @@ import PropTypes from "prop-types";
 // @mui material components
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
 function Invoice({ date, id, price, noGutter }) {
   return (
-    <SoftBox
+    <ArgonBox
       component="li"
       display="flex"
       justifyContent="space-between"
@@ -34,26 +34,32 @@ function Invoice({ date, id, price, noGutter }) {
       pr={1}
       mb={noGutter ? 0 : 1}
     >
-      <SoftBox lineHeight={1}>
-        <SoftTypography display="block" variant="button" fontWeight="medium">
+      <ArgonBox lineHeight={1.125}>
+        <ArgonTypography display="block" variant="button" fontWeight="medium">
           {date}
-        </SoftTypography>
-        <SoftTypography variant="caption" fontWeight="regular" color="text">
+        </ArgonTypography>
+        <ArgonTypography variant="caption" fontWeight="regular" color="text">
           {id}
-        </SoftTypography>
-      </SoftBox>
-      <SoftBox display="flex" alignItems="center">
-        <SoftTypography variant="button" fontWeight="regular" color="text">
+        </ArgonTypography>
+      </ArgonBox>
+      <ArgonBox display="flex" alignItems="center">
+        <ArgonTypography variant="button" fontWeight="regular" color="text">
           {price}
-        </SoftTypography>
-        <SoftBox display="flex" alignItems="center" lineHeight={0} ml={3} sx={{ cursor: "poiner" }}>
+        </ArgonTypography>
+        <ArgonBox
+          display="flex"
+          alignItems="center"
+          lineHeight={1}
+          ml={3}
+          sx={{ cursor: "pointer" }}
+        >
           <Icon fontSize="small">picture_as_pdf</Icon>
-          <SoftTypography variant="button" fontWeight="bold">
+          <ArgonTypography variant="button" fontWeight="bold">
             &nbsp;PDF
-          </SoftTypography>
-        </SoftBox>
-      </SoftBox>
-    </SoftBox>
+          </ArgonTypography>
+        </ArgonBox>
+      </ArgonBox>
+    </ArgonBox>
   );
 }
 

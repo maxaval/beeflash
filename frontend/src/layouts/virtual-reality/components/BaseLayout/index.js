@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -21,19 +21,19 @@ import { useLocation } from "react-router-dom";
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
 
-// Soft UI Dashboard React examples
+// Argon Dashboard 2 MUI example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import Sidenav from "examples/Sidenav";
 
-// Soft UI Dashboard React context
-import { useSoftUIController, setMiniSidenav, setLayout, setTransparentSidenav } from "context";
+// Argon Dashboard 2 MUI context
+import { useArgonController, setMiniSidenav, setLayout, setDarkSidenav } from "context";
 
-// Soft UI Dashboard React routes
+// Argon Dashboard 2 MUI routes
 import routes from "routes";
 
 // Custom styles for the BaseLayout
@@ -45,10 +45,11 @@ import {
 
 // Images
 import brand from "assets/images/logo-ct.png";
+import brandDark from "assets/images/logo-ct-dark.png";
 
 function BaseLayout({ children }) {
-  const [controller, dispatch] = useSoftUIController();
-  const { miniSidenav, sidenavColor } = controller;
+  const [controller, dispatch] = useArgonController();
+  const { miniSidenav, sidenavColor, darkSidenav, darkMode } = controller;
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const { pathname } = useLocation();
 
@@ -71,42 +72,43 @@ function BaseLayout({ children }) {
   // Change the document layout to VR for the VR view
   useEffect(() => {
     setLayout(dispatch, "vr");
-    setTransparentSidenav(dispatch, false);
+    setDarkSidenav(dispatch, darkMode);
   }, [pathname]);
 
   return (
-    <SoftBox sx={baseLayout}>
-      <SoftBox mt={3} mx={3}>
+    <ArgonBox sx={baseLayout}>
+      <ArgonBox bgColor={darkMode ? "transparent" : "info"} borderRadius="xl" mt={3} mx={3}>
         <DashboardNavbar />
-      </SoftBox>
-      <SoftBox sx={baseLayoutBackground}>
-        <SoftBox display={{ xs: "block", lg: "none" }}>
+      </ArgonBox>
+      <ArgonBox sx={baseLayoutBackground}>
+        <ArgonBox display={{ xs: "block", lg: "none" }}>
           <Sidenav
-            brand={brand}
-            brandName="Soft UI Dashboard PRO"
+            color={sidenavColor}
+            brand={darkSidenav || darkMode ? brand : brandDark}
+            brandName="Argon Dashboard 2 PRO"
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
           />
-        </SoftBox>
-        <SoftBox sx={baseLayoutContent}>
-          <SoftBox display={{ xs: "none", lg: "block" }}>
+        </ArgonBox>
+        <ArgonBox sx={baseLayoutContent}>
+          <ArgonBox display={{ xs: "none", lg: "block" }}>
             <Sidenav
               color={sidenavColor}
-              brand={brand}
-              brandName="Soft UI Dashboard PRO"
+              brand={darkSidenav || darkMode ? brand : brandDark}
+              brandName="Argon Dashboard 2 PRO"
               routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
             />
-          </SoftBox>
-          <DashboardLayout>{children}</DashboardLayout>
-        </SoftBox>
-      </SoftBox>
-      <SoftBox pb={2} pt={0.25}>
+          </ArgonBox>
+          <DashboardLayout bgColor="transparent">{children}</DashboardLayout>
+        </ArgonBox>
+      </ArgonBox>
+      <ArgonBox pb={2} pt={0.25}>
         <Footer />
-      </SoftBox>
-    </SoftBox>
+      </ArgonBox>
+    </ArgonBox>
   );
 }
 

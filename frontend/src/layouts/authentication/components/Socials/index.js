@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -13,14 +13,14 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// Soft UI Dashboard React components
-import SoftButton from "components/SoftButton";
-import SoftBox from "components/SoftBox";
+// Argon Dashboard 2 MUI components
+import ArgonButton from "components/ArgonButton";
+import ArgonBox from "components/ArgonBox";
 
 function Socials() {
   return (
-    <SoftBox display="flex" justifyContent="center">
-      <SoftButton variant="outlined" color="light">
+    <ArgonBox display="flex" justifyContent="center">
+      <ArgonButton variant="outlined" color="light">
         <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1">
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(3.000000, 3.000000)" fillRule="nonzero">
@@ -32,9 +32,9 @@ function Socials() {
             </g>
           </g>
         </svg>
-      </SoftButton>
-      <SoftBox px={1}>
-        <SoftButton variant="outlined" color="light">
+      </ArgonButton>
+      <ArgonBox px={1}>
+        <ArgonButton variant="outlined" color="light">
           <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
               <g transform="translate(7.000000, 0.564551)" fill="#000000" fillRule="nonzero">
@@ -42,9 +42,9 @@ function Socials() {
               </g>
             </g>
           </svg>
-        </SoftButton>
-      </SoftBox>
-      <SoftButton variant="outlined" color="light">
+        </ArgonButton>
+      </ArgonBox>
+      <ArgonButton variant="outlined" color="light">
         <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1">
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(3.000000, 2.000000)" fillRule="nonzero">
@@ -67,8 +67,8 @@ function Socials() {
             </g>
           </g>
         </svg>
-      </SoftButton>
-    </SoftBox>
+      </ArgonButton>
+    </ArgonBox>
   );
 }
 

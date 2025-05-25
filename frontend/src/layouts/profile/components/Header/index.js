@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -22,25 +22,19 @@ import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftAvatar from "components/SoftAvatar";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
+import ArgonAvatar from "components/ArgonAvatar";
 
-// Soft UI Dashboard React examples
+// Argon Dashboard 2 MUI example components
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
-// Soft UI Dashboard React icons
-import Cube from "examples/Icons/Cube";
-import Document from "examples/Icons/Document";
-import Settings from "examples/Icons/Settings";
-
-// Soft UI Dashboard React base styles
+// Argon Dashboard 2 MUI base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
 // Images
 import burceMars from "assets/images/bruce-mars.jpg";
-import curved0 from "assets/images/curved-images/curved0.jpg";
 
 function Header() {
   const [tabsOrientation, setTabsOrientation] = useState("horizontal");
@@ -69,40 +63,19 @@ function Header() {
   const handleSetTabValue = (event, newValue) => setTabValue(newValue);
 
   return (
-    <SoftBox position="relative">
+    <ArgonBox position="relative">
       <DashboardNavbar absolute light />
-      <SoftBox
-        display="flex"
-        alignItems="center"
-        position="relative"
-        minHeight="18.75rem"
-        borderRadius="xl"
-        sx={{
-          backgroundImage: ({ functions: { rgba, linearGradient }, palette: { gradients } }) =>
-            `${linearGradient(
-              rgba(gradients.info.main, 0.6),
-              rgba(gradients.info.state, 0.6)
-            )}, url(${curved0})`,
-          backgroundSize: "cover",
-          backgroundPosition: "50%",
-          overflow: "hidden",
-        }}
-      />
+      <ArgonBox height="220px" />
       <Card
         sx={{
-          backdropFilter: `saturate(200%) blur(30px)`,
-          backgroundColor: ({ functions: { rgba }, palette: { white } }) => rgba(white.main, 0.8),
-          boxShadow: ({ boxShadows: { navbarBoxShadow } }) => navbarBoxShadow,
-          position: "relative",
-          mt: -8,
-          mx: 3,
           py: 2,
           px: 2,
+          boxShadow: ({ boxShadows: { md } }) => md,
         }}
       >
         <Grid container spacing={3} alignItems="center">
           <Grid item>
-            <SoftAvatar
+            <ArgonAvatar
               src={burceMars}
               alt="profile-image"
               variant="rounded"
@@ -111,32 +84,48 @@ function Header() {
             />
           </Grid>
           <Grid item>
-            <SoftBox height="100%" mt={0.5} lineHeight={1}>
-              <SoftTypography variant="h5" fontWeight="medium">
+            <ArgonBox height="100%" mt={0.5} lineHeight={1}>
+              <ArgonTypography variant="h5" fontWeight="medium">
                 Alex Thompson
-              </SoftTypography>
-              <SoftTypography variant="button" color="text" fontWeight="medium">
+              </ArgonTypography>
+              <ArgonTypography variant="button" color="text" fontWeight="medium">
                 CEO / Co-Founder
-              </SoftTypography>
-            </SoftBox>
+              </ArgonTypography>
+            </ArgonBox>
           </Grid>
           <Grid item xs={12} md={6} lg={4} sx={{ ml: "auto" }}>
             <AppBar position="static">
-              <Tabs
-                orientation={tabsOrientation}
-                value={tabValue}
-                onChange={handleSetTabValue}
-                sx={{ background: "transparent" }}
-              >
-                <Tab label="App" icon={<Cube />} />
-                <Tab label="Message" icon={<Document />} />
-                <Tab label="Settings" icon={<Settings />} />
+              <Tabs orientation={tabsOrientation} value={tabValue} onChange={handleSetTabValue}>
+                <Tab
+                  label="App"
+                  icon={
+                    <i className="ni ni-app" style={{ marginTop: "6px", marginRight: "8px" }} />
+                  }
+                />
+                <Tab
+                  label="Message"
+                  icon={
+                    <i
+                      className="ni ni-email-83"
+                      style={{ marginTop: "6px", marginRight: "8px" }}
+                    />
+                  }
+                />
+                <Tab
+                  label="Settings"
+                  icon={
+                    <i
+                      className="ni ni-settings-gear-65"
+                      style={{ marginTop: "6px", marginRight: "8px" }}
+                    />
+                  }
+                />
               </Tabs>
             </AppBar>
           </Grid>
         </Grid>
       </Card>
-    </SoftBox>
+    </ArgonBox>
   );
 }
 

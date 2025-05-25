@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -18,13 +18,14 @@ import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 import Tooltip from "@mui/material/Tooltip";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftButton from "components/SoftButton";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
+import ArgonButton from "components/ArgonButton";
 
 // Images
-import curved1 from "assets/images/curved-images/curved1.jpg";
+const bgImage =
+  "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2370&q=80";
 
 function MediaPlayer() {
   const mediaPlayerButtonStyles = ({ functions: { pxToRem } }) => ({
@@ -39,24 +40,24 @@ function MediaPlayer() {
     <Card
       sx={({ functions: { linearGradient, rgba }, palette: { gradients } }) => ({
         backgroundImage: `${linearGradient(
-          rgba(gradients.dark.main, 0.85),
-          rgba(gradients.dark.state, 0.85)
-        )}, url(${curved1})`,
+          rgba(gradients.info.main, 0.75),
+          rgba(gradients.info.state, 0.75)
+        )}, url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       })}
     >
-      <SoftBox p={3} position="relative" lineHeight={0}>
-        <SoftTypography variant="h5" color="white" fontWeight="medium">
+      <ArgonBox p={3} position="relative" lineHeight={0}>
+        <ArgonTypography variant="h5" color="white" fontWeight="medium">
           Some Kind Of Blues
-        </SoftTypography>
-        <SoftTypography variant="button" color="white" fontWeight="regular">
+        </ArgonTypography>
+        <ArgonTypography variant="button" color="white" fontWeight="regular">
           Deftones
-        </SoftTypography>
-        <SoftBox display="flex" mt={6} pt={1}>
-          <SoftBox display="flex" alignItems="center" justifyContent="center">
+        </ArgonTypography>
+        <ArgonBox display="flex" mt={6} pt={1}>
+          <ArgonBox display="flex" alignItems="center" justifyContent="center">
             <Tooltip title="Prev" placement="top">
-              <SoftButton
+              <ArgonButton
                 variant="outlined"
                 size="large"
                 circular
@@ -64,10 +65,10 @@ function MediaPlayer() {
                 sx={mediaPlayerButtonStyles}
               >
                 <Icon>skip_previous</Icon>
-              </SoftButton>
+              </ArgonButton>
             </Tooltip>
             <Tooltip title="Pause" placement="top">
-              <SoftButton
+              <ArgonButton
                 variant="outlined"
                 size="large"
                 circular
@@ -75,10 +76,10 @@ function MediaPlayer() {
                 sx={mediaPlayerButtonStyles}
               >
                 <Icon>play_arrow</Icon>
-              </SoftButton>
+              </ArgonButton>
             </Tooltip>
             <Tooltip title="Next" placement="top">
-              <SoftButton
+              <ArgonButton
                 variant="outlined"
                 size="large"
                 circular
@@ -86,11 +87,11 @@ function MediaPlayer() {
                 sx={mediaPlayerButtonStyles}
               >
                 <Icon>skip_next</Icon>
-              </SoftButton>
+              </ArgonButton>
             </Tooltip>
-          </SoftBox>
-        </SoftBox>
-      </SoftBox>
+          </ArgonBox>
+        </ArgonBox>
+      </ArgonBox>
     </Card>
   );
 }

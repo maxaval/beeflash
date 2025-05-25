@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -23,108 +23,83 @@ import PropTypes from "prop-types";
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftBadge from "components/SoftBadge";
-import SoftButton from "components/SoftButton";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
+import ArgonButton from "components/ArgonButton";
 
-function DefaultPricingCard({ badge, price, specifications, action }) {
+function DefaultPricingCard({ title, price, specifications, action }) {
   const renderSpecifications = specifications.map(({ label, includes }) => (
-    <SoftBox key={label} display="flex" alignItems="center" p={1}>
-      <SoftBox
+    <ArgonBox key={label} display="flex" alignItems="center" p={1}>
+      <ArgonBox
         display="flex"
         justifyContent="center"
         alignItems="center"
         width="1.5rem"
         height="1.5rem"
         borderRadius="50%"
-        shaodw="md"
+        shadow="md"
         bgColor={includes ? "success" : "secondary"}
         variant="gradient"
         mr={2}
       >
-        <SoftTypography variant="button" color="white" sx={{ lineHeight: 0 }}>
+        <ArgonTypography variant="button" color="white" sx={{ lineHeight: 0 }}>
           <Icon sx={{ fontWeight: "bold" }}>{includes ? "done" : "remove"}</Icon>
-        </SoftTypography>
-      </SoftBox>
-      <SoftTypography variant="body2" color="text">
+        </ArgonTypography>
+      </ArgonBox>
+      <ArgonTypography variant="body2" color="text">
         {label}
-      </SoftTypography>
-    </SoftBox>
+      </ArgonTypography>
+    </ArgonBox>
   ));
 
   return (
     <Card>
-      <SoftBox pt={3} pb={2} px={2} textAlign="center">
-        <SoftBadge
-          variant="contained"
-          color={badge.color}
-          size="sm"
-          badgeContent={badge.label}
-          circular
-          container
-        />
-        <SoftBox my={1}>
-          <SoftTypography variant="h1">
-            <SoftTypography display="inline" component="small" variant="h2">
+      <ArgonBox pt={3} pb={2} px={2} textAlign="center">
+        <ArgonTypography variant="body2" color="dark" textTransform="uppercase" fontWeight="medium">
+          {title}
+        </ArgonTypography>
+        <ArgonBox my={1}>
+          <ArgonTypography variant="h1">
+            <ArgonTypography display="inline" component="small" variant="h2">
               {price.currency}
-            </SoftTypography>
+            </ArgonTypography>
             {price.value}
-          </SoftTypography>
-        </SoftBox>
-      </SoftBox>
-      <SoftBox pb={3} px={3}>
+          </ArgonTypography>
+        </ArgonBox>
+      </ArgonBox>
+      <ArgonBox pb={3} px={3}>
         {renderSpecifications}
         {action.type === "internal" ? (
-          <SoftBox mt={3}>
-            <SoftButton
-              component={Link}
-              to={action.route}
-              variant="gradient"
-              color={action.color}
-              fullWidth
-            >
+          <ArgonBox mt={3}>
+            <ArgonButton component={Link} to={action.route} color={action.color} fullWidth>
               {action.label}&nbsp;
               <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
-            </SoftButton>
-          </SoftBox>
+            </ArgonButton>
+          </ArgonBox>
         ) : (
-          <SoftBox mt={3}>
-            <SoftButton
+          <ArgonBox mt={3}>
+            <ArgonButton
               component="a"
               href={action.route}
               target="_blank"
               rel="noreferrer"
-              variant="gradient"
               color={action.color}
               fullWidth
             >
               {action.label}&nbsp;
               <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
-            </SoftButton>
-          </SoftBox>
+            </ArgonButton>
+          </ArgonBox>
         )}
-      </SoftBox>
+      </ArgonBox>
     </Card>
   );
 }
 
 // Typechecking props for the DefaultPricingCard
 DefaultPricingCard.propTypes = {
-  badge: PropTypes.shape({
-    color: PropTypes.oneOf([
-      "primary",
-      "secondary",
-      "info",
-      "success",
-      "warning",
-      "error",
-      "light",
-      "dark",
-    ]).isRequired,
-    label: PropTypes.string.isRequired,
-  }).isRequired,
+  title: PropTypes.string.isRequired,
   price: PropTypes.shape({
     currency: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,

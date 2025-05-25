@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 // @mui material components
 import { createTheme } from "@mui/material/styles";
 
-// Soft UI Dashboard React base styles
+// Argon Dashboard 2 MUI base styles
 import colors from "assets/theme/base/colors";
 import breakpoints from "assets/theme/base/breakpoints";
 import typography from "assets/theme/base/typography";
@@ -24,14 +24,14 @@ import boxShadows from "assets/theme/base/boxShadows";
 import borders from "assets/theme/base/borders";
 import globals from "assets/theme/base/globals";
 
-// Soft UI Dashboard React helper functions
+// Argon Dashboard 2 MUI helper functions
 import boxShadow from "assets/theme/functions/boxShadow";
 import hexToRgb from "assets/theme/functions/hexToRgb";
 import linearGradient from "assets/theme/functions/linearGradient";
 import pxToRem from "assets/theme/functions/pxToRem";
 import rgba from "assets/theme/functions/rgba";
 
-// Soft UI Dashboard React components base styles for @mui material components
+// Argon Dashboard 2 MUI components base styles for @mui material components
 import sidenav from "assets/theme/components/sidenav";
 import list from "assets/theme/components/list";
 import listItem from "assets/theme/components/list/listItem";
@@ -75,6 +75,11 @@ import buttonBase from "assets/theme/components/buttonBase";
 import icon from "assets/theme/components/icon";
 import svgIcon from "assets/theme/components/svgIcon";
 import link from "assets/theme/components/link";
+import dialog from "assets/theme/components/dialog";
+import dialogTitle from "assets/theme/components/dialog/dialogTitle";
+import dialogContent from "assets/theme/components/dialog/dialogContent";
+import dialogContentText from "assets/theme/components/dialog/dialogContentText";
+import dialogActions from "assets/theme/components/dialog/dialogActions";
 
 export default createTheme({
   breakpoints: { ...breakpoints },
@@ -141,5 +146,10 @@ export default createTheme({
     MuiIcon: { ...icon },
     MuiSvgIcon: { ...svgIcon },
     MuiLink: { ...link },
+    MuiDialog: { ...dialog },
+    MuiDialogTitle: { ...dialogTitle },
+    MuiDialogContent: { ...dialogContent },
+    MuiDialogContentText: { ...dialogContentText },
+    MuiDialogActions: { ...dialogActions },
   },
 });

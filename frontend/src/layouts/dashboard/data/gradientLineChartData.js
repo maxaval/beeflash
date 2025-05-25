@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -20,11 +20,6 @@ const gradientLineChartData = {
       label: "Mobile apps",
       color: "info",
       data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-    },
-    {
-      label: "Websites",
-      color: "dark",
-      data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
     },
   ],
 };

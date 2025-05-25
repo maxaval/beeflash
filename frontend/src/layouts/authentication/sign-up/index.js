@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -13,8 +13,6 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState } from "react";
-
 // react-router-dom components
 import { Link } from "react-router-dom";
 
@@ -22,63 +20,63 @@ import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import Checkbox from "@mui/material/Checkbox";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftInput from "components/SoftInput";
-import SoftButton from "components/SoftButton";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
+import ArgonInput from "components/ArgonInput";
+import ArgonButton from "components/ArgonButton";
 
 // Authentication layout components
-import BasicLayout from "layouts/authentication/components/BasicLayout";
+import CoverLayout from "layouts/authentication/components/CoverLayout";
 import Socials from "layouts/authentication/components/Socials";
 import Separator from "layouts/authentication/components/Separator";
 
 // Images
-import curved6 from "assets/images/curved-images/curved14.jpg";
+const bgImage =
+  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg";
 
-function SignUp() {
-  const [agreement, setAgremment] = useState(true);
-
-  const handleSetAgremment = () => setAgremment(!agreement);
-
+function Cover() {
   return (
-    <BasicLayout
+    <CoverLayout
       title="Welcome!"
       description="Use these awesome forms to login or create new account in your project for free."
-      image={curved6}
+      image={bgImage}
+      imgPosition="top"
+      button={{ color: "dark", variant: "gradient" }}
     >
       <Card>
-        <SoftBox p={3} mb={1} textAlign="center">
-          <SoftTypography variant="h5" fontWeight="medium">
+        <ArgonBox p={3} mb={1} textAlign="center">
+          <ArgonTypography variant="h5" fontWeight="medium">
             Register with
-          </SoftTypography>
-        </SoftBox>
-        <SoftBox mb={2}>
+          </ArgonTypography>
+        </ArgonBox>
+        <ArgonBox mb={2}>
           <Socials />
-        </SoftBox>
-        <Separator />
-        <SoftBox pt={2} pb={3} px={3}>
-          <SoftBox component="form" role="form">
-            <SoftBox mb={2}>
-              <SoftInput placeholder="Name" />
-            </SoftBox>
-            <SoftBox mb={2}>
-              <SoftInput type="email" placeholder="Email" />
-            </SoftBox>
-            <SoftBox mb={2}>
-              <SoftInput type="password" placeholder="Password" />
-            </SoftBox>
-            <SoftBox display="flex" alignItems="center">
-              <Checkbox checked={agreement} onChange={handleSetAgremment} />
-              <SoftTypography
+        </ArgonBox>
+        <ArgonBox px={12}>
+          <Separator />
+        </ArgonBox>
+        <ArgonBox pt={2} pb={3} px={3}>
+          <ArgonBox component="form" role="form">
+            <ArgonBox mb={2}>
+              <ArgonInput placeholder="Name" />
+            </ArgonBox>
+            <ArgonBox mb={2}>
+              <ArgonInput type="email" placeholder="Email" />
+            </ArgonBox>
+            <ArgonBox mb={2}>
+              <ArgonInput type="password" placeholder="Password" />
+            </ArgonBox>
+            <ArgonBox display="flex" alignItems="center">
+              <Checkbox defaultChecked />
+              <ArgonTypography
                 variant="button"
                 fontWeight="regular"
-                onClick={handleSetAgremment}
-                sx={{ cursor: "poiner", userSelect: "none" }}
+                sx={{ cursor: "pointer", userSelect: "none" }}
               >
                 &nbsp;&nbsp;I agree the&nbsp;
-              </SoftTypography>
-              <SoftTypography
+              </ArgonTypography>
+              <ArgonTypography
                 component="a"
                 href="#"
                 variant="button"
@@ -86,17 +84,17 @@ function SignUp() {
                 textGradient
               >
                 Terms and Conditions
-              </SoftTypography>
-            </SoftBox>
-            <SoftBox mt={4} mb={1}>
-              <SoftButton variant="gradient" color="dark" fullWidth>
+              </ArgonTypography>
+            </ArgonBox>
+            <ArgonBox mt={4} mb={1}>
+              <ArgonButton variant="gradient" color="dark" fullWidth>
                 sign up
-              </SoftButton>
-            </SoftBox>
-            <SoftBox mt={3} textAlign="center">
-              <SoftTypography variant="button" color="text" fontWeight="regular">
+              </ArgonButton>
+            </ArgonBox>
+            <ArgonBox mt={2}>
+              <ArgonTypography variant="button" color="text" fontWeight="regular">
                 Already have an account?&nbsp;
-                <SoftTypography
+                <ArgonTypography
                   component={Link}
                   to="/authentication/sign-in"
                   variant="button"
@@ -105,14 +103,14 @@ function SignUp() {
                   textGradient
                 >
                   Sign in
-                </SoftTypography>
-              </SoftTypography>
-            </SoftBox>
-          </SoftBox>
-        </SoftBox>
+                </ArgonTypography>
+              </ArgonTypography>
+            </ArgonBox>
+          </ArgonBox>
+        </ArgonBox>
       </Card>
-    </BasicLayout>
+    </CoverLayout>
   );
 }
 
-export default SignUp;
+export default Cover;

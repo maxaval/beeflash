@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -18,14 +18,12 @@ function navbar(theme, ownerState) {
 
   const { dark, white, text, transparent } = palette;
   const { navbarBoxShadow } = boxShadows;
-  const { rgba, pxToRem } = functions;
+  const { pxToRem } = functions;
   const { borderRadius } = borders;
 
   return {
     boxShadow: transparentNavbar || absolute ? "none" : navbarBoxShadow,
-    backdropFilter: transparentNavbar || absolute ? "none" : `saturate(200%) blur(${pxToRem(30)})`,
-    backgroundColor:
-      transparentNavbar || absolute ? `${transparent.main} !important` : rgba(white.main, 0.8),
+    backgroundColor: transparentNavbar || absolute ? `${transparent.main} !important` : white.main,
 
     color: () => {
       let color;
@@ -120,6 +118,15 @@ const navbarIconButton = ({ typography: { size }, breakpoints }) => ({
   },
 });
 
+const navbarDesktopMenu = ({ breakpoints }) => ({
+  display: "none !important",
+  cursor: "pointer",
+
+  [breakpoints.up("xl")]: {
+    display: "inline-block !important",
+  },
+});
+
 const navbarMobileMenu = ({ breakpoints }) => ({
   display: "inline-block",
   lineHeight: 0,
@@ -129,4 +136,11 @@ const navbarMobileMenu = ({ breakpoints }) => ({
   },
 });
 
-export { navbar, navbarContainer, navbarRow, navbarIconButton, navbarMobileMenu };
+export {
+  navbar,
+  navbarContainer,
+  navbarRow,
+  navbarIconButton,
+  navbarDesktopMenu,
+  navbarMobileMenu,
+};

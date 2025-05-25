@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Material Dashboard 2 PRO React - v2.1.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -22,13 +22,13 @@ import PropTypes from "prop-types";
 // @mui material components
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
 function DefaultNavbarLink({ icon, name, route, light }) {
   return (
-    <SoftBox
+    <ArgonBox
       component={Link}
       to={route}
       mx={1}
@@ -45,7 +45,7 @@ function DefaultNavbarLink({ icon, name, route, light }) {
       >
         {icon}
       </Icon>
-      <SoftTypography
+      <ArgonTypography
         variant="button"
         fontWeight="regular"
         color={light ? "white" : "dark"}
@@ -53,8 +53,8 @@ function DefaultNavbarLink({ icon, name, route, light }) {
         sx={{ width: "100%", lineHeight: 0 }}
       >
         &nbsp;{name}
-      </SoftTypography>
-    </SoftBox>
+      </ArgonTypography>
+    </ArgonBox>
   );
 }
 

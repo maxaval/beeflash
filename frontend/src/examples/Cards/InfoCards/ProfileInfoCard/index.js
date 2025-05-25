@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -25,11 +25,11 @@ import Divider from "@mui/material/Divider";
 import Tooltip from "@mui/material/Tooltip";
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
-// Soft UI Dashboard React base styles
+// Argon Dashboard 2 MUI base styles
 import colors from "assets/theme/base/colors";
 import typography from "assets/theme/base/typography";
 
@@ -56,19 +56,19 @@ function ProfileInfoCard({ title, description, info, social, action }) {
 
   // Render the card info items
   const renderItems = labels.map((label, key) => (
-    <SoftBox key={label} display="flex" py={1} pr={2}>
-      <SoftTypography variant="button" fontWeight="bold" textTransform="capitalize">
+    <ArgonBox key={label} display="flex" py={1} pr={2}>
+      <ArgonTypography variant="button" fontWeight="bold" textTransform="capitalize">
         {label}: &nbsp;
-      </SoftTypography>
-      <SoftTypography variant="button" fontWeight="regular" color="text">
+      </ArgonTypography>
+      <ArgonTypography variant="button" fontWeight="regular" color="text">
         &nbsp;{values[key]}
-      </SoftTypography>
-    </SoftBox>
+      </ArgonTypography>
+    </ArgonBox>
   ));
 
   // Render the card social media icons
   const renderSocial = social.map(({ link, icon, color }) => (
-    <SoftBox
+    <ArgonBox
       key={color}
       component="a"
       href={link}
@@ -81,40 +81,40 @@ function ProfileInfoCard({ title, description, info, social, action }) {
       lineHeight={1}
     >
       {icon}
-    </SoftBox>
+    </ArgonBox>
   ));
 
   return (
     <Card sx={{ height: "100%" }}>
-      <SoftBox display="flex" justifyContent="space-between" alignItems="center" pt={2} px={2}>
-        <SoftTypography variant="h6" fontWeight="medium" textTransform="capitalize">
+      <ArgonBox display="flex" justifyContent="space-between" alignItems="center" pt={2} px={2}>
+        <ArgonTypography variant="h6" fontWeight="medium" textTransform="capitalize">
           {title}
-        </SoftTypography>
-        <SoftTypography component={Link} to={action.route} variant="body2" color="secondary">
+        </ArgonTypography>
+        <ArgonTypography component={Link} to={action.route} variant="body2" color="secondary">
           <Tooltip title={action.tooltip} placement="top">
             <Icon>edit</Icon>
           </Tooltip>
-        </SoftTypography>
-      </SoftBox>
-      <SoftBox p={2}>
-        <SoftBox mb={2} lineHeight={1}>
-          <SoftTypography variant="button" color="text" fontWeight="regular">
+        </ArgonTypography>
+      </ArgonBox>
+      <ArgonBox p={2}>
+        <ArgonBox mb={2} lineHeight={1}>
+          <ArgonTypography variant="button" color="text" fontWeight="regular">
             {description}
-          </SoftTypography>
-        </SoftBox>
-        <SoftBox opacity={0.3}>
+          </ArgonTypography>
+        </ArgonBox>
+        <ArgonBox opacity={0.3}>
           <Divider />
-        </SoftBox>
-        <SoftBox>
+        </ArgonBox>
+        <ArgonBox>
           {renderItems}
-          <SoftBox display="flex" py={1} pr={2}>
-            <SoftTypography variant="button" fontWeight="bold" textTransform="capitalize">
+          <ArgonBox display="flex" py={1} pr={2}>
+            <ArgonTypography variant="button" fontWeight="bold" textTransform="capitalize">
               social: &nbsp;
-            </SoftTypography>
+            </ArgonTypography>
             {renderSocial}
-          </SoftBox>
-        </SoftBox>
-      </SoftBox>
+          </ArgonBox>
+        </ArgonBox>
+      </ArgonBox>
     </Card>
   );
 }

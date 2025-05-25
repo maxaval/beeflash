@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -23,15 +23,15 @@ import PropTypes from "prop-types";
 import { Breadcrumbs as MuiBreadcrumbs } from "@mui/material";
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
 function Breadcrumbs({ icon, title, route, light }) {
   const routes = route.slice(0, -1);
 
   return (
-    <SoftBox mr={{ xs: 0, xl: 8 }}>
+    <ArgonBox mr={{ xs: 0, xl: 8 }}>
       <MuiBreadcrumbs
         sx={{
           "& .MuiBreadcrumbs-separator": {
@@ -40,7 +40,7 @@ function Breadcrumbs({ icon, title, route, light }) {
         }}
       >
         <Link to="/">
-          <SoftTypography
+          <ArgonTypography
             component="span"
             variant="body2"
             color={light ? "white" : "dark"}
@@ -48,11 +48,11 @@ function Breadcrumbs({ icon, title, route, light }) {
             sx={{ lineHeight: 0 }}
           >
             <Icon>{icon}</Icon>
-          </SoftTypography>
+          </ArgonTypography>
         </Link>
         {routes.map((el) => (
           <Link to={`/${el}`} key={el}>
-            <SoftTypography
+            <ArgonTypography
               component="span"
               variant="button"
               fontWeight="regular"
@@ -62,10 +62,10 @@ function Breadcrumbs({ icon, title, route, light }) {
               sx={{ lineHeight: 0 }}
             >
               {el}
-            </SoftTypography>
+            </ArgonTypography>
           </Link>
         ))}
-        <SoftTypography
+        <ArgonTypography
           variant="button"
           fontWeight="regular"
           textTransform="capitalize"
@@ -73,9 +73,9 @@ function Breadcrumbs({ icon, title, route, light }) {
           sx={{ lineHeight: 0 }}
         >
           {title.replace("-", " ")}
-        </SoftTypography>
+        </ArgonTypography>
       </MuiBreadcrumbs>
-      <SoftTypography
+      <ArgonTypography
         fontWeight="bold"
         textTransform="capitalize"
         variant="h6"
@@ -83,8 +83,8 @@ function Breadcrumbs({ icon, title, route, light }) {
         noWrap
       >
         {title.replace("-", " ")}
-      </SoftTypography>
-    </SoftBox>
+      </ArgonTypography>
+    </ArgonBox>
   );
 }
 

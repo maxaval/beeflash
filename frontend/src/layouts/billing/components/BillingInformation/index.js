@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -16,9 +16,9 @@ Coded by www.creative-tim.com
 // @mui material components
 import Card from "@mui/material/Card";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
 // Billing page components
 import Bill from "layouts/billing/components/Bill";
@@ -26,13 +26,13 @@ import Bill from "layouts/billing/components/Bill";
 function BillingInformation() {
   return (
     <Card id="delete-account">
-      <SoftBox pt={3} px={2}>
-        <SoftTypography variant="h6" fontWeight="medium">
+      <ArgonBox pt={3} px={2}>
+        <ArgonTypography variant="h6" fontWeight="medium">
           Billing Information
-        </SoftTypography>
-      </SoftBox>
-      <SoftBox pt={1} pb={2} px={2}>
-        <SoftBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
+        </ArgonTypography>
+      </ArgonBox>
+      <ArgonBox pt={1} pb={2} px={2}>
+        <ArgonBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
           <Bill
             name="oliver liam"
             company="viking burrito"
@@ -52,8 +52,8 @@ function BillingInformation() {
             vat="FRB1235476"
             noGutter
           />
-        </SoftBox>
-      </SoftBox>
+        </ArgonBox>
+      </ArgonBox>
     </Card>
   );
 }

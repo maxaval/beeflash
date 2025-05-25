@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v3.1.0
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -14,15 +14,15 @@ Coded by www.creative-tim.com
 */
 
 /**
- * The base border styles for the Soft UI Dashboard React.
+ * The base border styles for the Argon Dashboard 2 MUI.
  * You can add new border width, border color or border radius using this file.
- * You can customized the borders value for the entire Soft UI Dashboard React using thie file.
+ * You can customized the borders value for the entire Argon Dashboard 2 MUI using thie file.
  */
 
-// Soft UI Dashboard React Base Styles
+// Argon Dashboard 2 MUI Base Styles
 import colors from "assets/theme/base/colors";
 
-// Soft UI Dashboard React Helper Functions
+// Argon Dashboard 2 MUI Helper Functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
 const { grey } = colors;

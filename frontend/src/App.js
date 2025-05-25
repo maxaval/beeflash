@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -23,34 +23,42 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
 
-// Soft UI Dashboard React examples
+// Argon Dashboard 2 MUI example components
 import Sidenav from "examples/Sidenav";
 import Configurator from "examples/Configurator";
 
-// Soft UI Dashboard React themes
+// Argon Dashboard 2 MUI themes
 import theme from "assets/theme";
 import themeRTL from "assets/theme/theme-rtl";
+import themeDark from "assets/theme-dark";
+import themeDarkRTL from "assets/theme-dark/theme-rtl";
 
 // RTL plugins
 import rtlPlugin from "stylis-plugin-rtl";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 
-// Soft UI Dashboard React routes
+// Argon Dashboard 2 MUI routes
 import routes from "routes";
 
-// Soft UI Dashboard React contexts
-import { useSoftUIController, setMiniSidenav, setOpenConfigurator } from "context";
+// Argon Dashboard 2 MUI contexts
+import { useArgonController, setMiniSidenav, setOpenConfigurator } from "context";
 
 // Images
 import brand from "assets/images/logo-ct.png";
+import brandDark from "assets/images/logo-ct-dark.png";
+
+// Icon Fonts
+import "assets/css/nucleo-icons.css";
+import "assets/css/nucleo-svg.css";
 
 export default function App() {
-  const [controller, dispatch] = useSoftUIController();
-  const { miniSidenav, direction, layout, openConfigurator, sidenavColor } = controller;
+  const [controller, dispatch] = useArgonController();
+  const { miniSidenav, direction, layout, openConfigurator, sidenavColor, darkSidenav, darkMode } =
+    controller;
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const [rtlCache, setRtlCache] = useState(null);
   const { pathname } = useLocation();
@@ -109,7 +117,7 @@ export default function App() {
     });
 
   const configsButton = (
-    <SoftBox
+    <ArgonBox
       display="flex"
       justifyContent="center"
       alignItems="center"
@@ -129,19 +137,19 @@ export default function App() {
       <Icon fontSize="default" color="inherit">
         settings
       </Icon>
-    </SoftBox>
+    </ArgonBox>
   );
 
   return direction === "rtl" ? (
     <CacheProvider value={rtlCache}>
-      <ThemeProvider theme={themeRTL}>
+      <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
         <CssBaseline />
         {layout === "dashboard" && (
           <>
             <Sidenav
               color={sidenavColor}
-              brand={brand}
-              brandName="Soft UI Dashboard"
+              brand={darkSidenav || darkMode ? brand : brandDark}
+              brandName="Argon Dashboard 2 PRO"
               routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
@@ -158,14 +166,14 @@ export default function App() {
       </ThemeProvider>
     </CacheProvider>
   ) : (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={darkMode ? themeDark : theme}>
       <CssBaseline />
       {layout === "dashboard" && (
         <>
           <Sidenav
             color={sidenavColor}
-            brand={brand}
-            brandName="Soft UI Dashboard"
+            brand={darkSidenav || darkMode ? brand : brandDark}
+            brandName="Argon Dashboard 2 PRO"
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}

@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -17,10 +17,10 @@ Coded by www.creative-tim.com
 import Card from "@mui/material/Card";
 import Tooltip from "@mui/material/Tooltip";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftAvatar from "components/SoftAvatar";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
+import ArgonAvatar from "components/ArgonAvatar";
 
 // Images
 import team1 from "assets/images/team-1.jpg";
@@ -43,25 +43,25 @@ function Messages() {
 
   return (
     <Card>
-      <SoftBox display="flex" alignItems="center" justifyContent="space-between" p={3}>
-        <SoftTypography variant="body2" color="text">
+      <ArgonBox display="flex" alignItems="center" justifyContent="space-between" p={3}>
+        <ArgonTypography variant="body2" color="text">
           Messages
-        </SoftTypography>
-        <SoftBox display="flex">
+        </ArgonTypography>
+        <ArgonBox display="flex">
           <Tooltip title="2 New Messages" placement="top">
-            <SoftAvatar src={team1} alt="team-1" size="sm" sx={messagesAvatarStyles} />
+            <ArgonAvatar src={team1} alt="team-1" size="sm" sx={messagesAvatarStyles} />
           </Tooltip>
           <Tooltip title="1 New Messages" placement="top">
-            <SoftAvatar src={team2} alt="team-2" size="sm" sx={messagesAvatarStyles} />
+            <ArgonAvatar src={team2} alt="team-2" size="sm" sx={messagesAvatarStyles} />
           </Tooltip>
           <Tooltip title="13 New Messages" placement="top">
-            <SoftAvatar src={team3} alt="team-3" size="sm" sx={messagesAvatarStyles} />
+            <ArgonAvatar src={team3} alt="team-3" size="sm" sx={messagesAvatarStyles} />
           </Tooltip>
           <Tooltip title="7 New Messages" placement="top">
-            <SoftAvatar src={team4} alt="team-4" size="sm" sx={messagesAvatarStyles} />
+            <ArgonAvatar src={team4} alt="team-4" size="sm" sx={messagesAvatarStyles} />
           </Tooltip>
-        </SoftBox>
-      </SoftBox>
+        </ArgonBox>
+      </ArgonBox>
     </Card>
   );
 }

@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -19,12 +19,22 @@ import { styled } from "@mui/material/styles";
 
 export default styled(Drawer)(({ theme, ownerState }) => {
   const { palette, boxShadows, transitions, breakpoints, functions } = theme;
-  const { transparentSidenav, miniSidenav } = ownerState;
+  const { darkSidenav, miniSidenav, layout } = ownerState;
 
-  const sidebarWidth = 250;
-  const { white, transparent } = palette;
+  const sidebarWidth = 256;
+  const { white, background, transparent } = palette;
   const { xxl } = boxShadows;
   const { pxToRem } = functions;
+
+  let bgColor;
+
+  if ((darkSidenav && layout === "landing") || (!darkSidenav && layout === "landing")) {
+    bgColor = transparent.main;
+  } else if (darkSidenav) {
+    bgColor = background.dark;
+  } else {
+    bgColor = white.main;
+  }
 
   // styles for the sidenav when miniSidenav={false}
   const drawerOpenStyles = () => ({
@@ -35,9 +45,9 @@ export default styled(Drawer)(({ theme, ownerState }) => {
     }),
 
     [breakpoints.up("xl")]: {
-      backgroundColor: transparentSidenav ? transparent.main : white.main,
-      boxShadow: transparentSidenav ? "none" : xxl,
-      marginBottom: transparentSidenav ? 0 : "inherit",
+      backgroundColor: bgColor,
+      boxShadow: darkSidenav ? "none" : xxl,
+      marginBottom: darkSidenav ? 0 : "inherit",
       left: "0",
       width: sidebarWidth,
       transform: "translateX(0)",
@@ -57,9 +67,9 @@ export default styled(Drawer)(({ theme, ownerState }) => {
     }),
 
     [breakpoints.up("xl")]: {
-      backgroundColor: transparentSidenav ? transparent.main : white.main,
-      boxShadow: transparentSidenav ? "none" : xxl,
-      marginBottom: transparentSidenav ? 0 : "inherit",
+      backgroundColor: bgColor,
+      boxShadow: darkSidenav ? "none" : xxl,
+      marginBottom: darkSidenav ? 0 : "inherit",
       left: "0",
       width: pxToRem(96),
       overflowX: "hidden",
@@ -75,6 +85,7 @@ export default styled(Drawer)(({ theme, ownerState }) => {
     "& .MuiDrawer-paper": {
       boxShadow: xxl,
       border: "none",
+      backgroundColor: bgColor,
 
       ...(miniSidenav ? drawerCloseStyles() : drawerOpenStyles()),
     },

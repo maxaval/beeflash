@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -18,19 +18,17 @@ import Grid from "@mui/material/Grid";
 import Tooltip from "@mui/material/Tooltip";
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftAvatar from "components/SoftAvatar";
-import SoftTypography from "components/SoftTypography";
-import SoftButton from "components/SoftButton";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonAvatar from "components/ArgonAvatar";
+import ArgonTypography from "components/ArgonTypography";
+import ArgonButton from "components/ArgonButton";
 
-// Soft UI Dashboard React base styles
+// Argon Dashboard 2 MUI base styles
 import typography from "assets/theme/base/typography";
 
-// VR dashboards components
+// VR components
 import BaseLayout from "layouts/virtual-reality/components/BaseLayout";
-
-// VRInfo dashboards components
 import TodoList from "layouts/virtual-reality/components/TodoList";
 import TodoCard from "layouts/virtual-reality/components/TodoCard";
 import Emails from "layouts/virtual-reality/components/Emails";
@@ -46,9 +44,9 @@ function VRInfo() {
 
   return (
     <BaseLayout>
-      <SoftBox
+      <ArgonBox
         minHeight="100vh"
-        ml={{ xs: 0, md: 10 }}
+        ml={{ xs: 0, md: 6 }}
         mt={{ xs: 0, md: 4 }}
         pt={{ xs: 16, md: 32 }}
         pb={{ xs: 0, md: 3 }}
@@ -56,7 +54,7 @@ function VRInfo() {
       >
         <Grid container>
           <Grid item xs={12} md={1}>
-            <SoftBox
+            <ArgonBox
               display="flex"
               flexDirection={{ xs: "row", md: "column" }}
               justifyContent="center"
@@ -65,7 +63,7 @@ function VRInfo() {
               mb={{ xs: 8, md: 0 }}
             >
               <Tooltip title="My Profile" placement="right">
-                <SoftAvatar
+                <ArgonAvatar
                   src={team1}
                   alt="Profile Picture"
                   size="lg"
@@ -74,9 +72,9 @@ function VRInfo() {
                 />
               </Tooltip>
 
-              <SoftBox my={{ xs: 0, md: 2 }} mx={{ xs: 2, md: 0 }}>
+              <ArgonBox my={{ xs: 0, md: 2 }} mx={{ xs: 2, md: 0 }}>
                 <Tooltip title="Home" placement="right">
-                  <SoftButton
+                  <ArgonButton
                     size="large"
                     iconOnly
                     sx={({ palette: { dark }, borders: { borderRadius } }) => ({
@@ -85,12 +83,12 @@ function VRInfo() {
                     })}
                   >
                     <Icon>home</Icon>
-                  </SoftButton>
+                  </ArgonButton>
                 </Tooltip>
-              </SoftBox>
-              <SoftBox mb={{ xs: 0, md: 2 }} mr={{ xs: 2, md: 0 }}>
+              </ArgonBox>
+              <ArgonBox mb={{ xs: 0, md: 2 }} mr={{ xs: 2, md: 0 }}>
                 <Tooltip title="Search" placement="right">
-                  <SoftButton
+                  <ArgonButton
                     size="large"
                     iconOnly
                     sx={({ palette: { dark }, borders: { borderRadius } }) => ({
@@ -99,11 +97,11 @@ function VRInfo() {
                     })}
                   >
                     <Icon>search</Icon>
-                  </SoftButton>
+                  </ArgonButton>
                 </Tooltip>
-              </SoftBox>
+              </ArgonBox>
               <Tooltip title="Minimize" placement="right">
-                <SoftButton
+                <ArgonButton
                   size="large"
                   iconOnly
                   sx={({ palette: { dark }, borders: { borderRadius } }) => ({
@@ -112,54 +110,60 @@ function VRInfo() {
                   })}
                 >
                   <Icon>more_horiz</Icon>
-                </SoftButton>
+                </ArgonButton>
               </Tooltip>
-            </SoftBox>
+            </ArgonBox>
           </Grid>
-          <Grid item xs={12} md={11} lg={10} xl={9}>
-            <SoftBox
+          <Grid item xs={12} md={11} lg={10} xl={9} ml={6} mt={-6}>
+            <ArgonBox
               display="flex"
               justifyContent="space-between"
-              alignItems={{ xs: "center", md: "flex-start" }}
+              alignItems={{ xs: "center", md: "flex-end" }}
               ml={{ xs: 1, md: 4 }}
               mt={-1}
             >
-              <SoftBox>
-                <SoftBox
+              <ArgonBox>
+                <ArgonBox
                   fontSize={{ xs: h2.fontSize, lg: d1.fontSize }}
                   fontWeight={fontWeightMedium}
                   lineHeight={1}
+                  color="white"
                 >
                   28&deg;C
-                </SoftBox>
-                <SoftTypography variant="h6" fontWeight="medium" textTransform="uppercase">
+                </ArgonBox>
+                <ArgonTypography
+                  variant="h6"
+                  color="white"
+                  fontWeight="medium"
+                  textTransform="uppercase"
+                >
                   cloudy
-                </SoftTypography>
-              </SoftBox>
-              <SoftBox component="img" src={sunCloud} width="30%" />
-            </SoftBox>
-            <SoftBox mt={3} mb={8} ml={{ xs: 1, md: 4 }} mr={{ xs: 1, md: 0 }}>
+                </ArgonTypography>
+              </ArgonBox>
+              <ArgonBox component="img" src={sunCloud} width="30%" />
+            </ArgonBox>
+            <ArgonBox mt={3} mb={8} ml={{ xs: 1, md: 4 }} mr={{ xs: 1, md: 0 }}>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={4}>
                   <TodoList />
                 </Grid>
                 <Grid item xs={12} md={4}>
-                  <SoftBox mb={3}>
+                  <ArgonBox mb={3}>
                     <TodoCard />
-                  </SoftBox>
+                  </ArgonBox>
                   <Emails />
                 </Grid>
                 <Grid item xs={12} md={4}>
-                  <SoftBox mb={3}>
+                  <ArgonBox mb={3}>
                     <MediaPlayer />
-                  </SoftBox>
+                  </ArgonBox>
                   <Messages />
                 </Grid>
               </Grid>
-            </SoftBox>
+            </ArgonBox>
           </Grid>
         </Grid>
-      </SoftBox>
+      </ArgonBox>
     </BaseLayout>
   );
 }

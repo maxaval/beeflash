@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -22,38 +22,38 @@ import PropTypes from "prop-types";
 // @mui material components
 import Card from "@mui/material/Card";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftAvatar from "components/SoftAvatar";
-import SoftButton from "components/SoftButton";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
+import ArgonAvatar from "components/ArgonAvatar";
+import ArgonButton from "components/ArgonButton";
 
 function ProfilesList({ title, profiles }) {
   const renderProfiles = profiles.map(({ image, name, description, action }) => (
-    <SoftBox key={name} component="li" display="flex" alignItems="center" py={1} mb={1}>
-      <SoftBox mr={2}>
-        <SoftAvatar src={image} alt="something here" variant="rounded" shadow="md" />
-      </SoftBox>
-      <SoftBox
+    <ArgonBox key={name} component="li" display="flex" alignItems="center" py={1} mb={1}>
+      <ArgonBox mr={2}>
+        <ArgonAvatar src={image} alt="something here" variant="rounded" shadow="md" />
+      </ArgonBox>
+      <ArgonBox
         display="flex"
         flexDirection="column"
         alignItems="flex-start"
         justifyContent="center"
       >
-        <SoftTypography variant="button" fontWeight="medium">
+        <ArgonTypography variant="button" fontWeight="medium">
           {name}
-        </SoftTypography>
-        <SoftTypography variant="caption" color="text">
+        </ArgonTypography>
+        <ArgonTypography variant="caption" color="text">
           {description}
-        </SoftTypography>
-      </SoftBox>
-      <SoftBox ml="auto">
+        </ArgonTypography>
+      </ArgonBox>
+      <ArgonBox ml="auto">
         {action.type === "internal" ? (
-          <SoftButton component={Link} to={action.route} variant="text" color="info">
+          <ArgonButton component={Link} to={action.route} variant="text" color="info">
             {action.label}
-          </SoftButton>
+          </ArgonButton>
         ) : (
-          <SoftButton
+          <ArgonButton
             component="a"
             href={action.route}
             target="_blank"
@@ -62,24 +62,24 @@ function ProfilesList({ title, profiles }) {
             color={action.color}
           >
             {action.label}
-          </SoftButton>
+          </ArgonButton>
         )}
-      </SoftBox>
-    </SoftBox>
+      </ArgonBox>
+    </ArgonBox>
   ));
 
   return (
     <Card sx={{ height: "100%" }}>
-      <SoftBox pt={2} px={2}>
-        <SoftTypography variant="h6" fontWeight="medium" textTransform="capitalize">
+      <ArgonBox pt={2} px={2}>
+        <ArgonTypography variant="h6" fontWeight="medium" textTransform="capitalize">
           {title}
-        </SoftTypography>
-      </SoftBox>
-      <SoftBox p={2}>
-        <SoftBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
+        </ArgonTypography>
+      </ArgonBox>
+      <ArgonBox p={2}>
+        <ArgonBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
           {renderProfiles}
-        </SoftBox>
-      </SoftBox>
+        </ArgonBox>
+      </ArgonBox>
     </Card>
   );
 }

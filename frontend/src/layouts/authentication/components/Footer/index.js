@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -23,74 +23,74 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
 function Footer() {
   return (
-    <SoftBox component="footer" py={6}>
+    <ArgonBox component="footer" py={6}>
       <Grid container justifyContent="center">
         <Grid item xs={10} lg={8}>
-          <SoftBox display="flex" justifyContent="center" flexWrap="wrap" mb={3}>
-            <SoftBox mr={{ xs: 2, lg: 3, xl: 6 }}>
-              <SoftTypography component="a" href="#" variant="body2" color="secondary">
+          <ArgonBox display="flex" justifyContent="center" flexWrap="wrap" mb={3}>
+            <ArgonBox mr={{ xs: 2, lg: 3, xl: 6 }}>
+              <ArgonTypography component="a" href="#" variant="body2" color="secondary">
                 Company
-              </SoftTypography>
-            </SoftBox>
-            <SoftBox mr={{ xs: 2, lg: 3, xl: 6 }}>
-              <SoftTypography component="a" href="#" variant="body2" color="secondary">
+              </ArgonTypography>
+            </ArgonBox>
+            <ArgonBox mr={{ xs: 2, lg: 3, xl: 6 }}>
+              <ArgonTypography component="a" href="#" variant="body2" color="secondary">
                 About Us
-              </SoftTypography>
-            </SoftBox>
-            <SoftBox mr={{ xs: 0, lg: 3, xl: 6 }}>
-              <SoftTypography component="a" href="#" variant="body2" color="secondary">
+              </ArgonTypography>
+            </ArgonBox>
+            <ArgonBox mr={{ xs: 0, lg: 3, xl: 6 }}>
+              <ArgonTypography component="a" href="#" variant="body2" color="secondary">
                 Team
-              </SoftTypography>
-            </SoftBox>
-            <SoftBox mr={{ xs: 2, lg: 3, xl: 6 }}>
-              <SoftTypography component="a" href="#" variant="body2" color="secondary">
+              </ArgonTypography>
+            </ArgonBox>
+            <ArgonBox mr={{ xs: 2, lg: 3, xl: 6 }}>
+              <ArgonTypography component="a" href="#" variant="body2" color="secondary">
                 Product
-              </SoftTypography>
-            </SoftBox>
-            <SoftBox mr={{ xs: 2, lg: 3, xl: 6 }}>
-              <SoftTypography component="a" href="#" variant="body2" color="secondary">
+              </ArgonTypography>
+            </ArgonBox>
+            <ArgonBox mr={{ xs: 2, lg: 3, xl: 6 }}>
+              <ArgonTypography component="a" href="#" variant="body2" color="secondary">
                 Blog
-              </SoftTypography>
-            </SoftBox>
-            <SoftBox>
-              <SoftTypography component="a" href="#" variant="body2" color="secondary">
+              </ArgonTypography>
+            </ArgonBox>
+            <ArgonBox>
+              <ArgonTypography component="a" href="#" variant="body2" color="secondary">
                 Pricing
-              </SoftTypography>
-            </SoftBox>
-          </SoftBox>
+              </ArgonTypography>
+            </ArgonBox>
+          </ArgonBox>
         </Grid>
         <Grid item xs={12} lg={8}>
-          <SoftBox display="flex" justifyContent="center" mt={1} mb={3}>
-            <SoftBox mr={3} color="secondary">
+          <ArgonBox display="flex" justifyContent="center" mt={1} mb={3}>
+            <ArgonBox mr={3} color="secondary">
               <FacebookIcon fontSize="small" />
-            </SoftBox>
-            <SoftBox mr={3} color="secondary">
+            </ArgonBox>
+            <ArgonBox mr={3} color="secondary">
               <TwitterIcon fontSize="small" />
-            </SoftBox>
-            <SoftBox mr={3} color="secondary">
+            </ArgonBox>
+            <ArgonBox mr={3} color="secondary">
               <InstagramIcon fontSize="small" />
-            </SoftBox>
-            <SoftBox mr={3} color="secondary">
+            </ArgonBox>
+            <ArgonBox mr={3} color="secondary">
               <PinterestIcon fontSize="small" />
-            </SoftBox>
-            <SoftBox color="secondary">
+            </ArgonBox>
+            <ArgonBox color="secondary">
               <LinkedInIcon fontSize="small" />
-            </SoftBox>
-          </SoftBox>
+            </ArgonBox>
+          </ArgonBox>
         </Grid>
         <Grid item xs={12} lg={8} sx={{ textAlign: "center" }}>
-          <SoftTypography variant="body2" color="secondary">
-            Copyright &copy; 2021 Soft by Creative Tim.
-          </SoftTypography>
+          <ArgonTypography variant="body2" color="secondary">
+            Copyright &copy; 2022 Argon by Creative Tim.
+          </ArgonTypography>
         </Grid>
       </Grid>
-    </SoftBox>
+    </ArgonBox>
   );
 }
 

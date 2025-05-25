@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -13,7 +13,8 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState, useEffect } from "react";
+// react-github-btn
+import GitHubButton from "react-github-btn";
 
 // @mui material components
 import Divider from "@mui/material/Divider";
@@ -26,67 +27,44 @@ import Icon from "@mui/material/Icon";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftButton from "components/SoftButton";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
+import ArgonButton from "components/ArgonButton";
 
 // Custom styles for the Configurator
 import ConfiguratorRoot from "examples/Configurator/ConfiguratorRoot";
 
-// Soft UI Dashboard React context
+// Argon Dashboard 2 MUI context
 import {
-  useSoftUIController,
+  useArgonController,
   setOpenConfigurator,
-  setTransparentSidenav,
+  setDarkSidenav,
+  setMiniSidenav,
   setFixedNavbar,
   setSidenavColor,
+  setDarkMode,
 } from "context";
 
 function Configurator() {
-  const [controller, dispatch] = useSoftUIController();
-  const { openConfigurator, transparentSidenav, fixedNavbar, sidenavColor } = controller;
-  const [disabled, setDisabled] = useState(false);
+  const [controller, dispatch] = useArgonController();
+  const { openConfigurator, darkSidenav, miniSidenav, fixedNavbar, sidenavColor, darkMode } =
+    controller;
   const sidenavColors = ["primary", "dark", "info", "success", "warning", "error"];
 
-  // Use the useEffect hook to change the button state for the sidenav type based on window size.
-  useEffect(() => {
-    // A function that sets the disabled state of the buttons for the sidenav type.
-    function handleDisabled() {
-      return window.innerWidth > 1200 ? setDisabled(false) : setDisabled(true);
-    }
-
-    // The event listener that's calling the handleDisabled function when resizing the window.
-    window.addEventListener("resize", handleDisabled);
-
-    // Call the handleDisabled function to set the state with the initial value.
-    handleDisabled();
-
-    // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleDisabled);
-  }, []);
-
   const handleCloseConfigurator = () => setOpenConfigurator(dispatch, false);
-  const handleTransparentSidenav = () => setTransparentSidenav(dispatch, true);
-  const handleWhiteSidenav = () => setTransparentSidenav(dispatch, false);
+  const handledarkSidenav = () => setDarkSidenav(dispatch, true);
+  const handleWhiteSidenav = () => setDarkSidenav(dispatch, false);
+  const handleMiniSidenav = () => setMiniSidenav(dispatch, !miniSidenav);
   const handleFixedNavbar = () => setFixedNavbar(dispatch, !fixedNavbar);
-
-  // sidenav type buttons styles
-  const sidenavTypeButtonsStyles = ({
-    functions: { pxToRem },
-    boxShadows: { buttonBoxShadow },
-  }) => ({
-    height: pxToRem(42),
-    boxShadow: buttonBoxShadow.main,
-
-    "&:hover, &:focus": {
-      opacity: 1,
-    },
-  });
+  const handleDarkMode = () => {
+    setDarkSidenav(dispatch, !darkMode);
+    setDarkMode(dispatch, !darkMode);
+  };
 
   return (
     <ConfiguratorRoot variant="permanent" ownerState={{ openConfigurator }}>
-      <SoftBox
+      <ArgonBox
         display="flex"
         justifyContent="space-between"
         alignItems="baseline"
@@ -94,18 +72,19 @@ function Configurator() {
         pb={0.8}
         px={3}
       >
-        <SoftBox>
-          <SoftTypography variant="h5">Soft UI Configurator</SoftTypography>
-          <SoftTypography variant="body2" color="text">
+        <ArgonBox>
+          <ArgonTypography variant="h5">Argon Configurator</ArgonTypography>
+          <ArgonTypography variant="body2" color="text">
             See our dashboard options.
-          </SoftTypography>
-        </SoftBox>
+          </ArgonTypography>
+        </ArgonBox>
 
         <Icon
-          sx={({ typography: { size, fontWeightBold }, palette: { dark } }) => ({
+          sx={({ typography: { size, fontWeightBold }, palette: { dark, white } }) => ({
             fontSize: `${size.md} !important`,
             fontWeight: `${fontWeightBold} !important`,
-            stroke: dark.main,
+            color: darkMode ? white.main : dark.main,
+            stroke: darkMode ? white.main : dark.main,
             strokeWidth: "2px",
             cursor: "pointer",
             mt: 2,
@@ -114,15 +93,15 @@ function Configurator() {
         >
           close
         </Icon>
-      </SoftBox>
+      </ArgonBox>
 
       <Divider />
 
-      <SoftBox pt={1.25} pb={3} px={3}>
-        <SoftBox>
-          <SoftTypography variant="h6">Sidenav Colors</SoftTypography>
+      <ArgonBox pt={1.25} pb={3} px={3}>
+        <ArgonBox>
+          <ArgonTypography variant="h6">Sidenav Colors</ArgonTypography>
 
-          <SoftBox mb={0.5}>
+          <ArgonBox mb={0.5}>
             {sidenavColors.map((color) => (
               <IconButton
                 key={color}
@@ -150,123 +129,143 @@ function Configurator() {
                 onClick={() => setSidenavColor(dispatch, color)}
               />
             ))}
-          </SoftBox>
-        </SoftBox>
+          </ArgonBox>
+        </ArgonBox>
 
-        <SoftBox mt={3} lineHeight={1}>
-          <SoftTypography variant="h6">Sidenav Type</SoftTypography>
-          <SoftTypography variant="button" color="text" fontWeight="regular">
+        <ArgonBox mt={3} lineHeight={1}>
+          <ArgonTypography variant="h6">Sidenav Type</ArgonTypography>
+          <ArgonTypography variant="button" color="text" fontWeight="regular">
             Choose between 2 different sidenav types.
-          </SoftTypography>
+          </ArgonTypography>
 
-          <SoftBox
+          <ArgonBox
             sx={{
               display: "flex",
               mt: 2,
             }}
           >
-            <SoftButton
+            <ArgonButton
               color="info"
-              variant={transparentSidenav ? "gradient" : "outlined"}
-              onClick={handleTransparentSidenav}
-              disabled={disabled}
-              fullWidth
-              sx={{
-                mr: 1,
-                ...sidenavTypeButtonsStyles,
-              }}
-            >
-              Transparent
-            </SoftButton>
-            <SoftButton
-              color="info"
-              variant={transparentSidenav ? "outlined" : "gradient"}
+              variant={darkSidenav ? "outlined" : "gradient"}
               onClick={handleWhiteSidenav}
-              disabled={disabled}
               fullWidth
-              sx={sidenavTypeButtonsStyles}
             >
               White
-            </SoftButton>
-          </SoftBox>
-        </SoftBox>
-        <SoftBox mt={3} mb={2} lineHeight={1}>
-          <SoftTypography variant="h6">Navbar Fixed</SoftTypography>
+            </ArgonButton>
+            <ArgonButton
+              color="info"
+              variant={darkSidenav ? "gradient" : "outlined"}
+              onClick={handledarkSidenav}
+              fullWidth
+              sx={{
+                ml: 1,
+              }}
+            >
+              Dark
+            </ArgonButton>
+          </ArgonBox>
+        </ArgonBox>
+        <ArgonBox display="flex" justifyContent="space-between" mt={3} lineHeight={1}>
+          <ArgonTypography variant="h6">Navbar Fixed</ArgonTypography>
 
           <Switch checked={fixedNavbar} onChange={handleFixedNavbar} />
-        </SoftBox>
+        </ArgonBox>
 
         <Divider />
 
-        <SoftBox mt={3} mb={2}>
-          <SoftBox mb={2}>
-            <SoftButton
+        <ArgonBox display="flex" justifyContent="space-between" lineHeight={1}>
+          <ArgonTypography variant="h6">Sidenav Mini</ArgonTypography>
+
+          <Switch checked={miniSidenav} onChange={handleMiniSidenav} />
+        </ArgonBox>
+
+        <Divider />
+
+        <ArgonBox display="flex" justifyContent="space-between" lineHeight={1}>
+          <ArgonTypography variant="h6">Light / Dark</ArgonTypography>
+
+          <Switch checked={darkMode} onChange={handleDarkMode} />
+        </ArgonBox>
+
+        <ArgonBox mt={5} mb={2}>
+          <ArgonBox mb={2}>
+            <ArgonButton
               component={Link}
-              href="https://www.creative-tim.com/product/soft-ui-dashboard-react"
+              href="https://www.creative-tim.com/product/argon-dashboard-pro-material-ui"
+              target="_blank"
+              rel="noreferrer"
+              color="info"
+              fullWidth
+            >
+              Buy Now
+            </ArgonButton>
+          </ArgonBox>
+          <ArgonBox mb={2}>
+            <ArgonButton
+              component={Link}
+              href="https://www.creative-tim.com/product/argon-dashboard-material-ui"
               target="_blank"
               rel="noreferrer"
               color="dark"
-              variant="gradient"
               fullWidth
             >
-              free download
-            </SoftButton>
-          </SoftBox>
-          <SoftButton
+              Free Download
+            </ArgonButton>
+          </ArgonBox>
+          <ArgonButton
             component={Link}
-            href="https://www.creative-tim.com/learning-lab/react/quick-start/soft-ui-dashboard/"
+            href="https://www.creative-tim.com/learning-lab/react/quick-start/argon-dashboard/"
             target="_blank"
             rel="noreferrer"
-            color="dark"
+            color={darkMode ? "white" : "dark"}
             variant="outlined"
             fullWidth
           >
-            view documentation
-          </SoftButton>
-        </SoftBox>
-        <SoftBox display="flex" justifyContent="center">
-          <a
-            className="github-button"
-            href="https://github.com/creativetimofficial/soft-ui-dashboard-react"
+            View Documentation
+          </ArgonButton>
+        </ArgonBox>
+        <ArgonBox display="flex" justifyContent="center">
+          <GitHubButton
+            href="https://github.com/creativetimofficial/argon-dashboard-material-ui"
             data-icon="octicon-star"
             data-size="large"
             data-show-count="true"
-            aria-label="Star creativetimofficial/soft-ui-dashboard-react on GitHub"
+            aria-label="Star creativetimofficial/argon-dashboard-material-uit on GitHub"
           >
             Star
-          </a>
-        </SoftBox>
-        <SoftBox mt={3} textAlign="center">
-          <SoftBox mb={0.5}>
-            <SoftTypography variant="h6">Thank you for sharing!</SoftTypography>
-          </SoftBox>
+          </GitHubButton>
+        </ArgonBox>
+        <ArgonBox mt={3} textAlign="center">
+          <ArgonBox mb={0.5}>
+            <ArgonTypography variant="h6">Thank you for sharing!</ArgonTypography>
+          </ArgonBox>
 
-          <SoftBox display="flex" justifyContent="center">
-            <SoftBox mr={1.5}>
-              <SoftButton
+          <ArgonBox display="flex" justifyContent="center">
+            <ArgonBox mr={1.5}>
+              <ArgonButton
                 component={Link}
-                href="//twitter.com/intent/tweet?text=Check%20Soft%20UI%20Dashboard%20React%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23react%23mui&url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fsoft-ui-dashboard-react"
+                href="//twitter.com/intent/tweet?text=Check%20Argon%20Dashboard%202%20PRO%20MUI%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23react%20%mui&url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fargon-dashboard-material-ui"
                 target="_blank"
                 rel="noreferrer"
                 color="dark"
               >
                 <TwitterIcon />
                 &nbsp; Tweet
-              </SoftButton>
-            </SoftBox>
-            <SoftButton
+              </ArgonButton>
+            </ArgonBox>
+            <ArgonButton
               component={Link}
-              href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/soft-ui-dashboard-react"
+              href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/argon-dashboard-material-ui"
               target="_blank"
               rel="noreferrer"
               color="dark"
             >
               <FacebookIcon />
               &nbsp; Share
-            </SoftButton>
-          </SoftBox>
-        </SoftBox>
-      </SoftBox>
+            </ArgonButton>
+          </ArgonBox>
+        </ArgonBox>
+      </ArgonBox>
     </ConfiguratorRoot>
   );
 }

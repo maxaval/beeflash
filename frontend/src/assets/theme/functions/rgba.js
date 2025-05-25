@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -18,7 +18,7 @@ Coded by www.creative-tim.com
   to convert the hex code into rgb for using it inside the rgba color format.
  */
 
-// Soft UI Dashboard React helper functions
+// Argon Dashboard 2 MUI helper functions
 import hexToRgb from "assets/theme/functions/hexToRgb";
 
 function rgba(color, opacity) {

@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -19,21 +19,21 @@ import PropTypes from "prop-types";
 // @mui material components
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React base styles
+// Argon Dashboard 2 MUI base styles
 import typography from "assets/theme/base/typography";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
-import SoftProgress from "components/SoftProgress";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
+import ArgonProgress from "components/ArgonProgress";
 
 function ReportsBarChartItem({ color, icon, label, progress }) {
   const { size } = typography;
 
   return (
-    <SoftBox width="100%">
-      <SoftBox display="flex" alignItems="center" mb={2}>
-        <SoftBox
+    <ArgonBox width="100%">
+      <ArgonBox display="flex" alignItems="center" mb={2}>
+        <ArgonBox
           bgColor={icon.color}
           width="1.25rem"
           height="1.25rem"
@@ -48,25 +48,25 @@ function ReportsBarChartItem({ color, icon, label, progress }) {
           variant="gradient"
         >
           <Icon>{icon.component}</Icon>
-        </SoftBox>
-        <SoftTypography
+        </ArgonBox>
+        <ArgonTypography
           variant="caption"
           textTransform="capitalize"
           fontWeight="medium"
           color="text"
         >
           {label}
-        </SoftTypography>
-      </SoftBox>
-      <SoftBox mt={1}>
-        <SoftTypography variant="h4" fontWeight="bold" color={color}>
+        </ArgonTypography>
+      </ArgonBox>
+      <ArgonBox mt={1}>
+        <ArgonTypography variant="h4" fontWeight="bold" color={color}>
           {progress.content}
-        </SoftTypography>
-        <SoftBox width="75%" mt={0.5}>
-          <SoftProgress value={progress.percentage} color={color} />
-        </SoftBox>
-      </SoftBox>
-    </SoftBox>
+        </ArgonTypography>
+        <ArgonBox width="75%" mt={0.5}>
+          <ArgonProgress value={progress.percentage} color={color} />
+        </ArgonBox>
+      </ArgonBox>
+    </ArgonBox>
   );
 }
 

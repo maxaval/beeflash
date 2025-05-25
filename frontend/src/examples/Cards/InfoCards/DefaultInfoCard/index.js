@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -21,15 +21,15 @@ import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
 
-// Soft UI Dashboard React components
-import SoftBox from "components/SoftBox";
-import SoftTypography from "components/SoftTypography";
+// Argon Dashboard 2 MUI components
+import ArgonBox from "components/ArgonBox";
+import ArgonTypography from "components/ArgonTypography";
 
 function DefaultInfoCard({ color, icon, title, description, value }) {
   return (
     <Card>
-      <SoftBox p={2} mx={3} display="flex" justifyContent="center">
-        <SoftBox
+      <ArgonBox p={2} mx={3} display="flex" justifyContent="center">
+        <ArgonBox
           display="grid"
           justifyContent="center"
           alignItems="center"
@@ -42,24 +42,24 @@ function DefaultInfoCard({ color, icon, title, description, value }) {
           variant="gradient"
         >
           <Icon fontSize="default">{icon}</Icon>
-        </SoftBox>
-      </SoftBox>
-      <SoftBox pb={2} px={2} textAlign="center" lineHeight={1.25}>
-        <SoftTypography variant="h6" fontWeight="medium" textTransform="capitalize">
+        </ArgonBox>
+      </ArgonBox>
+      <ArgonBox pb={2} px={2} textAlign="center" lineHeight={1.25}>
+        <ArgonTypography variant="h6" fontWeight="medium" textTransform="capitalize">
           {title}
-        </SoftTypography>
+        </ArgonTypography>
         {description && (
-          <SoftTypography variant="caption" color="text" fontWeight="regular">
+          <ArgonTypography variant="caption" color="text" fontWeight="regular">
             {description}
-          </SoftTypography>
+          </ArgonTypography>
         )}
         {description && !value ? null : <Divider />}
         {value && (
-          <SoftTypography variant="h5" fontWeight="medium">
+          <ArgonTypography variant="h5" fontWeight="medium">
             {value}
-          </SoftTypography>
+          </ArgonTypography>
         )}
-      </SoftBox>
+      </ArgonBox>
     </Card>
   );
 }

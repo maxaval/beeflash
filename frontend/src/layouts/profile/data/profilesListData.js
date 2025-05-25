@@ -1,9 +1,9 @@
 /**
 =========================================================
-* Soft UI Dashboard React - v4.0.1
+* Argon Dashboard 2 MUI - v3.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -29,7 +29,7 @@ const profilesListData = [
       type: "internal",
       route: "/pages/profile/profile-overview",
       color: "info",
-      label: "reply",
+      label: "Reply",
     },
   },
   {
@@ -40,7 +40,7 @@ const profilesListData = [
       type: "internal",
       route: "/pages/profile/profile-overview",
       color: "info",
-      label: "reply",
+      label: "Reply",
     },
   },
   {
@@ -51,7 +51,7 @@ const profilesListData = [
       type: "internal",
       route: "/pages/profile/profile-overview",
       color: "info",
-      label: "reply",
+      label: "Reply",
     },
   },
   {
@@ -62,7 +62,7 @@ const profilesListData = [
       type: "internal",
       route: "/pages/profile/profile-overview",
       color: "info",
-      label: "reply",
+      label: "Reply",
     },
   },
   {
@@ -73,7 +73,7 @@ const profilesListData = [
       type: "internal",
       route: "/pages/profile/profile-overview",
       color: "info",
-      label: "reply",
+      label: "Reply",
     },
   },
 ];
